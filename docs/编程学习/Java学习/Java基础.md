@@ -5,4 +5,4 @@
 > 本站地址：[https://codefather.cn](https://codefather.cn)
 
 
-![图片](./img.png)
+![图片](img.png)

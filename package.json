@@ -2,8 +2,8 @@
   "name": "codefather",
   "version": "1.0.0",
   "scripts": {
-    "docs:dev": "vuepress dev .",
-    "docs:build": " vuepress build ."
+    "docs:dev": "vuepress dev docs",
+    "docs:build": " vuepress build docs"
   },
   "license": "MIT",
   "devDependencies": {
