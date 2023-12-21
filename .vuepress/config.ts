@@ -4,12 +4,12 @@ import sidebar from "./sidebar";
 import footer from "./footer";
 import extraSideBar from "./extraSideBar";
 
-const author = "程序员鱼皮";
-const domain = "https://codefather.cn";
+const author = "程序员飞云";
+const domain = "code-center-yf28.vercel.app";
 const tags = ["程序员", "编程", "计算机"];
 
 export default defineConfig({
-  title: "鱼皮的编程宝典",
+  title: "飞云的编程宝典",
   description: "贴心的编程学习路线，全面的编程知识百科",
   head: [
     // 站点图标
@@ -20,7 +20,7 @@ export default defineConfig({
       {
         name: "keywords",
         content:
-          "程序员鱼皮, 编程学习路线, 编程知识百科, Java, 编程导航, 前端, 开发, 编程分享, 项目, IT, 求职, 面经",
+          "涉及编程学习路线, 编程知识百科, Java,  前端, 开发, 编程学习, 项目, IT, 求职, 面经",
       },
     ],
     // 百度统计
@@ -121,7 +121,7 @@ export default defineConfig({
     lastUpdated: "最近更新",
 
     // GitHub 仓库位置
-    repo: "liyupi/codefather",
+    repo: "flybase1/codeCenterU",
     docsBranch: "master",
 
     // 编辑链接
