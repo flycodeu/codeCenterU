@@ -9,7 +9,6 @@ const domain = "https://flycode.icu";
 const tags = ["程序员", "编程", "计算机"];
 
 export default defineConfig({
-    base: './',
     title: "飞云的编程宝典",
     description: "贴心的编程学习路线，全面的编程知识百科",
     head: [
@@ -84,12 +83,12 @@ export default defineConfig({
             },
         ],
         // https://github.com/ekoeryanto/vuepress-plugin-sitemap
-        // [
-        //   "sitemap",
-        //   {
-        //     hostname: domain,
-        //   },
-        // ],
+        [
+          "sitemap",
+          {
+            hostname: domain,
+          },
+        ],
         // https://github.com/IOriens/vuepress-plugin-baidu-autopush
         ["vuepress-plugin-baidu-autopush"],
         // https://github.com/zq99299/vuepress-plugin/tree/master/vuepress-plugin-tags
