@@ -5,7 +5,7 @@ import footer from "./footer";
 import extraSideBar from "./extraSideBar";
 
 const author = "程序员飞云";
-const domain = "www.flycode.icu";
+const domain = "https://flycode.icu";
 const tags = ["程序员", "编程", "计算机"];
 
 export default defineConfig({
