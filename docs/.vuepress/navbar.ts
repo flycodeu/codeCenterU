@@ -53,4 +53,8 @@ export default [
     //     link: '/软件安装/'
     // },
 
+    {
+        text: "知识碎片",
+        link: '/知识碎片/'
+    }
 ] as NavItem[];
