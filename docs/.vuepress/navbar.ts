@@ -70,7 +70,12 @@ export default [
         link: '/常用框架/'
     },
     {
+        text: "实用插件",
+        link: '/实用插件/',
+    },
+    {
         text: "AI使用",
         link: '/AI使用/'
     }
+
 ] as NavItem[];
