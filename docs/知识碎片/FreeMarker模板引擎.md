@@ -45,9 +45,8 @@ public class MainTemplate {
 2. 判断是否需要循环
 3. 判断是否需要修改输出语句
 
-如果是单纯修改字符串那么可以自己写一套规则然后进行替换，但是一旦遇到比如是否需要循环等复杂条件的时候，这种方法就不行了 ，而且一旦修改的东西多了，整体上自己写就很麻烦，所以这里直接考虑使用模板引擎，使用现成的技术来实现需求。
-
-
+如果是单纯修改字符串那么可以自己写一套规则然后进行替换，但是一旦遇到比如是否需要循环等复杂条件的时候，这种方法就不行了
+，而且一旦修改的东西多了，整体上自己写就很麻烦，所以这里直接考虑使用模板引擎，使用现成的技术来实现需求。
 
 ## FreeMarker
 
@@ -67,13 +66,14 @@ public class MainTemplate {
 
 FreeMarker主要优点是不会和其他框架绑定，是个Java项目就可以使用。
 
-官方网站 [https://freemarker.apache.org/docs/dgui_quickstart.html](https://freemarker.apache.org/docs/dgui_quickstart.html)，缺点是都是英文，但是有详细示例，可以看懂
+官方网站 [https://freemarker.apache.org/docs/dgui_quickstart.html](https://freemarker.apache.org/docs/dgui_quickstart.html)
+，缺点是都是英文，但是有详细示例，可以看懂
 
-中文网站(http://www.freemarker.net/#1)[http://www.freemarker.net/#1]   （http://freemarker.foofun.cn/index.html)[http://freemarker.foofun.cn/index.html]
+中文网站
+[http://www.freemarker.net/#1](http://www.freemarker.net/#1)   
+[http://freemarker.foofun.cn/index.html](http://freemarker.foofun.cn/index.html)
 
 基本上不需要特地的去学习，看一下相关知识就可以了。
-
-
 
 ### FreeMarker实战Demo
 
@@ -120,22 +120,20 @@ FreeMarker主要优点是不会和其他框架绑定，是个Java项目就可以
 
 ```json
 {
-    "user":"fly",
-    "menuItems":[
-        {
-         "url":"https://www.baidu.com",
-         "label":"百度",
-        },
-       {
-         "url":"https://www.baidu.com",
-         "label":"百度",
-        }
-    ],
-    "currentYear":"2023"
+  "user": "fly",
+  "menuItems": [
+    {
+      "url": "https://www.baidu.com",
+      "label": "百度"
+    },
+    {
+      "url": "https://www.baidu.com",
+      "label": "百度"
+    }
+  ],
+  "currentYear": "2023"
 }
 ```
-
-
 
 3. 编写配置，没什么好说的，要修改的只有文件地址，以及传递数据，数据是上面Json形式的转换为map存储
 
@@ -196,8 +194,6 @@ FreeMarker主要优点是不会和其他框架绑定，是个Java项目就可以
 cfg.setNumberFormat("0.######")
 ```
 
-
-
 ### 回归背景
 
 以上就是简单的官方示例，那么这个应该如何用于解决背景里面的相关问题，重新回顾一下上面的问题
@@ -206,11 +202,7 @@ cfg.setNumberFormat("0.######")
 2. 修改循环条件（可选）
 3. 修改输出信息
 
-
-
 很明显 1，3是String类型的，而控制循环条件是判断条件，使用布尔值，于是可以定义对应的实体类
-
-
 
 1. 创建实体类
 
@@ -285,7 +277,9 @@ public class MainTemplate {
 
 ### 潜在问题
 
-1. 关于这个配置的file目录可能会存在部分问题，之前直接用的相对路径没出问题，但是可能有的时候使用会出现问题找不到对应的路径，需要传递一个完整的当前项目路径(user.dir获取)+相对路径进行拼接
+1.
+关于这个配置的file目录可能会存在部分问题，之前直接用的相对路径没出问题，但是可能有的时候使用会出现问题找不到对应的路径，需要传递一个完整的当前项目路径(
+user.dir获取)+相对路径进行拼接
 
 ```java
         String projectPath = System.getProperty("user.dir") ;
@@ -296,13 +290,13 @@ public class MainTemplate {
 
 2. 目前健壮性不行，如果没有传递对应的值会报错，为了解决这个问题，有两种方案
 
-   1. 模板里面使用对应的!语法
+    1. 模板里面使用对应的!语法
 
    ```java
     @author ${author!'fly'}
    ```
 
-   2. java写好（推荐）
+    2. java写好（推荐）
 
    ```java
    /**
@@ -319,8 +313,6 @@ public class MainTemplate {
    */
    private Boolean loop = true;
    ```
-
-
 
 ### 通用方法
 
