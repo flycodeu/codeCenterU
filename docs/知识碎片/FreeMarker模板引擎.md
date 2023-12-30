@@ -186,7 +186,7 @@ FreeMarker主要优点是不会和其他框架绑定，是个Java项目就可以
 
 5. 存在问题，很显然上面的2,023不是我们需要的，我们需要的是2023，这个直接看官方文档即可，修改对应的number格式
 
-(http://freemarker.foofun.cn/app_faq.html#faq_number_grouping)[http://freemarker.foofun.cn/app_faq.html#faq_number_grouping]
+[http://freemarker.foofun.cn/app_faq.html#faq_number_grouping](http://freemarker.foofun.cn/app_faq.html#faq_number_grouping)
 
 主要是不同的国家这个表示不一样而已。
 

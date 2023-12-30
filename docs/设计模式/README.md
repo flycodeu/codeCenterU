@@ -4,3 +4,5 @@
 想到这些模式如何搭配使用，一方面是没掌握好对应的设计模式，另一方面自己接触的实战场景也不多，所以决定重新学习设计模式，这里我推荐
 小傅哥的[https://bugstack.cn/md/zsxq/booklet/java-design.html](https://bugstack.cn/md/zsxq/booklet/java-design.html)
 深入实战去理解这些设计模式。
+
+[命令模式](命令模式.md)
