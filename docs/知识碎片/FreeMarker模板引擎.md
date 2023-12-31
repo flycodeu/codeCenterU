@@ -82,9 +82,9 @@ FreeMarker主要优点是不会和其他框架绑定，是个Java项目就可以
 ```xml
 <!--http://www.freemarker.net/#1-->
 <dependency>
-    <groupId>org.FreeMarker</groupId>
-    <artifactId>FreeMarker</artifactId>
-    <version>2.3.31</version>
+   <groupId>org.freemarker</groupId>
+   <artifactId>freemarker</artifactId>
+   <version>2.3.32</version>
 </dependency>
 ```
 
@@ -167,6 +167,10 @@ FreeMarker主要优点是不会和其他框架绑定，是个Java项目就可以
         model.put("menuItems", menuList);
 
         // 第六步：创建一个Writer对象，一般创建FileWriter对象，指定生成的文件名。
+         // 文件不存在
+        if (!FileUtil.exist(outputPath)){
+            FileUtil.touch(outputPath);
+        }
         Writer out = new FileWriter("myweb.html");
 
         // 第七步：调用模板对象的process方法输出文件。
@@ -314,6 +318,8 @@ user.dir获取)+相对路径进行拼接
    private Boolean loop = true;
    ```
 
+
+
 ### 通用方法
 
 这个完全可以抽象出对应方法，通用方法，唯一需要传递的是输入路径，输出路径，数据
@@ -333,12 +339,16 @@ user.dir获取)+相对路径进行拼接
         File templateDir = new File(inputPath).getParentFile();
         configuration.setDirectoryForTemplateLoading(templateDir);
         // 第三步：设置模板文件使用的字符集。一般就是utf-8.
-        configuration.setDefaultEncoding("utf-8");
+        configuration.setEncoding(Locale.CANADA, "UTF-8");
         // 第四步：加载模板文件，创建一个模板对象。
         String templateName = new File(inputPath).getName();
         Template template = configuration.getTemplate(templateName);
         // 第五步：创建一个模板使用的数据集，可以是pojo也可以是map。一般是Map。
         // 第六步：创建一个Writer对象，一般创建FileWriter对象，指定生成的文件名。
+        // 文件不存在
+        if (!FileUtil.exist(outputPath)){
+            FileUtil.touch(outputPath);
+        }
         Writer out = new FileWriter(outputPath);
         // 第七步：调用模板对象的process方法输出文件。
         template.process(model, out);
@@ -348,3 +358,6 @@ user.dir获取)+相对路径进行拼接
 }
 ```
 
+# 重点
+这个网站[http://freemarker.foofun.cn/app_faq.html#faq_number_grouping](http://freemarker.foofun.cn/app_faq.html#faq_number_grouping)
+如果之后有问题，大部分都可以在这里解决，找到答案
