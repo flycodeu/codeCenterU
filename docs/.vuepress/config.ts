@@ -31,7 +31,7 @@ export default defineConfig({
         var _hmt = _hmt || [];
         (function() {
           var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?2675818a983a3131404cee835018f016";
+          hm.src = "https://hm.baidu.com/hm.js?c997d5962e0c1f29e0698a84c9846b43";
           var s = document.getElementsByTagName("script")[0]; 
           s.parentNode.insertBefore(hm, s);
         })();
@@ -55,7 +55,7 @@ export default defineConfig({
         [
             "@vuepress/google-analytics",
             {
-                ga: "GTM-WVS9HM6W", // 补充自己的谷歌分析 ID，比如 UA-00000000-0
+                ga: "G-QB443PP1CR", // 补充自己的谷歌分析 ID，比如 UA-00000000-0
             },
         ],
         ["@vuepress/medium-zoom"],
