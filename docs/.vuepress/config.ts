@@ -55,7 +55,7 @@ export default defineConfig({
         [
             "@vuepress/google-analytics",
             {
-                ga: "G-QB443PP1CR", // 补充自己的谷歌分析 ID，比如 UA-00000000-0
+                ga: "G-0Y5383N294", // 补充自己的谷歌分析 ID，比如 UA-00000000-0
             },
         ],
         ["@vuepress/medium-zoom"],
