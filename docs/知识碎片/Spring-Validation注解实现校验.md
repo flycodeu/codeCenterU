@@ -1,4 +1,4 @@
-# @Validated注解实现校验
+# Spring Validation注解实现校验
 
 > 本文作者：程序员飞云
 >
@@ -137,9 +137,43 @@ public class UserController {
 
 ### 1. 所有注解
 
-这个直接看jar文档即可，下面我也会整理出来
+这个直接看jar文档即可，寻找对应的maven依赖就可以
+
+![image-20240104180912673](http://cdn.flycode.icu/codeCenterImg/202401041809774.png)
 
 ![image-20231229175720316](http://cdn.flycode.icu/codeCenterImg/202312291757361.png)
 
+|        注解        | 解释                                                         | null是否有效 |
+| :----------------: | ------------------------------------------------------------ | ------------ |
+|   `@AssertFalse`   | 注解元素必须是false                                          |              |
+|   `@AssertTrue`    | 注解元素必须是true                                           |              |
+|   `@DecimalMax`    | 注解元素必须是数字，并且值小于等于指定的值                   |              |
+|   `@DecimalMin`    | 注解元素必须是数字，并且值大于等于指定的值                   |              |
+|     `@Digits`      | 被注释的元素可以接收指定范围内的数字，`integer`表示整数，`fraction`表示小数 |              |
+|      `@Email`      | 邮箱必须要符合对应的格式，`regexp`可以使用正则表达式         |              |
+|     `@Future`      | 元素必须是未来的日期                                         |              |
+| `@FutureOrPresent` | 元素必须是过去或者现在                                       |              |
+|       `@Max`       | 元素必须是数字，并且小于等于指定的值                         |              |
+|       `@Min`       | 元素必须是数字，并且大于等于指定的值                         |              |
+|    `@Negative`     | 元素必须是负数                                               |              |
+| `@NegativeOrZero`  | 元素必须是负数或者是0                                        |              |
+|    `@NotBlank`     | 元素不能为空，至少包含一个非空白字符                         | 无效         |
+|    `@NotEmpty`     | 元素不能为空，并且不能为null                                 | 无效         |
+|     `@NotNull`     | 元素不能为null                                               | 无效         |
+|      `@Null`       | 元素必须是null                                               |              |
+|      `@Past`       | 元素必须是过去的日期                                         |              |
+|  `@PastOrPresent`  | 元素必须是过去或者现在的日期                                 |              |
+|     `@Pattern`     | 元素必须要符合指定的正则匹配                                 |              |
+|    `@Positive`     | 元素必须是正数                                               |              |
+| `@PositiveOrZero`  | 元素必须是正数或者是0                                        |              |
+|      `@Size`       | 元素大小在一定的范围内                                       |              |
+
+里面有几个比较常用，但是容易出错的注解
+
+- @NotNull: 适用于任何类型，不能为null，但是可以是“”
+- @NotBlank：只能用于String类型，不能为null，要有实际字符，长度必须大于0
+- @NotEmpty：用于 String、Collection、Map、Array，不能为null，长度必须大于0。
+
+### 2. 异常处理
 
 
