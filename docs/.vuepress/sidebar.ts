@@ -13,7 +13,7 @@ export default {
     // 降级，默认根据文章标题渲染侧边栏
     "/编程学习/": codeLearnSideBar,
     "/知识碎片/": knowledgeShareSideBar,
-    "/设计模式": javaDesignSideBar,
+    "/设计模式/": javaDesignSideBar,
     "/常用框架/": frameworkSideBar,
     "/常用插件/": commonpluginSideBar,
     "/AI使用/": aiLearnSideBar,
