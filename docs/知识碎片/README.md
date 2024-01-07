@@ -9,7 +9,7 @@
 
 这部分的核心主要是记录一些小的知识点，并不是项目笔记，学习笔记之类的内容。
 
-[@Validated注解实现校验](Spring-Validation注解实现校验.md)
+[Spring-Validation注解实现校验](Spring-Validation注解实现校验.md)
 
 [FreeMarker模板引擎](FreeMarker模板引擎.md)
 
