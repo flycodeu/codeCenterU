@@ -62,10 +62,6 @@ export default [
         link: "/设计模式/"
     },
     {
-        text: "读书笔记",
-        link: '/读书笔记/'
-    },
-    {
         text: "常用框架",
         link: '/常用框架/'
     },

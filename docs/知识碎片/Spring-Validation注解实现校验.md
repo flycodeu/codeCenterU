@@ -176,4 +176,206 @@ public class UserController {
 
 ### 2. 异常处理
 
+这里就以上面三个方法的异常信息为例。
+
+上面这些信息报错后，肯定是要使用统一的异常处理来拦截异常，然后变成我们所需要返回的报错提示。这边可以采用SpringBoot里面的`@RestControllerAdvice`+`@ExceptionHandler`组合来实现
+
+```java
+@RestControllerAdvice
+public class GlobalControllerExceptionHandler {
+
+    /**
+     * 拦截@RequstBody注解的参数校验异常
+     *
+     * @param e
+     * @return
+     */
+    @ExceptionHandler( MethodArgumentNotValidException.class )
+    public String handleMethodArgumentNotValidException(MethodArgumentNotValidException e) {
+        BindingResult bindingResult = e.getBindingResult();
+        // 处理验证错误
+        return bindingResult.getAllErrors()
+                .stream()
+                .map(DefaultMessageSourceResolvable::getDefaultMessage)
+                .collect(Collectors.joining(","));
+    }
+
+
+    /**
+     * 拦截不加@RequstBody注解的参数校验异常
+     *
+     * @param e
+     * @return
+     */
+    @ExceptionHandler( BindException.class )
+    public String handleBindException(BindException e) {
+        BindingResult bindingResult = e.getBindingResult();
+        // 处理验证错误
+        return bindingResult.getAllErrors()
+                .stream()
+                .map(DefaultMessageSourceResolvable::getDefaultMessage)
+                .collect(Collectors.joining(","));
+    }
+
+
+    /**
+     * 拦截@RequstParam注解的参数校验异常
+     *
+     * @param e
+     * @return
+     */
+    @ExceptionHandler( {ConstraintViolationException.class} )
+    public String handleMethodArgumentNotValidException(ConstraintViolationException e) {
+        // 处理验证错误
+        return e.getConstraintViolations()
+                .stream()
+                .map(ConstraintViolation::getMessage)
+                .collect(Collectors.joining(","));
+    }
+
+}
+```
+
+
+
+#### 1. 使用@RequsteBody参数异常
+
+![image-20240107171758680](http://cdn.flycode.icu/codeCenterImg/202401071718793.png)
+
+
+
+#### 2. 使用表单方式提交异常
+
+![image-20240107171855194](http://cdn.flycode.icu/codeCenterImg/202401071718264.png)
+
+#### 3. 使用@RequsetParam参数异常
+
+![image-20240107172356917](http://cdn.flycode.icu/codeCenterImg/202401071723994.png)
+
+
+
+
+
+### 3. 自定义校验规则
+
+虽然说里面的大部分注解能够解决我们的问题，但是我们有的时候依然是想自己定义校验规则，我们可以仿照源码的设计方案来处理这个问题。
+
+首先我们先看一下如何自定义注解，仿照源码来进行设计。
+
+![image-20240107172820802](http://cdn.flycode.icu/codeCenterImg/202401071728887.png)
+
+里面几个比较重要的设计如下
+
+1. `Target`: 定义这个注解的使用位置
+
+   ​	取值如下
+
+   - TYPE：类，接口或者枚举
+   - FIELD：域，包含枚举常量
+   - METHOD：方法
+   - PARAMETER：参数
+   - CONSTRUCTOR：构造方法
+   - LOCAL_VARIABLE：局部变量
+   - ANNOTATION_TYPE：注解类型
+   - PACKAGE：包
+   - TYPE_PARAMETER： 用来标注类型参数  (1.8)
+   - TYPE_USE：能标注任何类型名称 (1.8)
+
+2. `Retention`: 注解的生存周期
+
+   取值如下：
+
+   - SOURCE：注解只保留在源文件，当Java文件编译成class文件的时候，注解被遗弃；被编译器忽略(.java文件)
+   - CLASS：注解被保留到class文件，但jvm加载class文件时候被遗弃，这是默认的生命周期(.class)
+   - RUNTIME：注解不仅被保存到class文件中，jvm加载class文件之后，仍然存在(内存中的字节码)
+
+3. `Documented`: 指明修饰的注解，可以被例如javadoc此类的工具文档化，只负责标记，没有成员取值。
+4. `Repeatable(List.class)`: 指示注解可以在相同的位置重复多次，通常具有不同的配置。List 包含注解类型。
+
+4. `Constraint`: 可以指定校验器
+5. `message`: 错误信息
+6. `groups`: 允许指定此约束所属的验证分组
+7. `payload`:  能被 Bean Validation API 客户端使用，以自定义一个注解的 payload 对象。
+
+
+
+
+
+#### 编写Phone的自定义注解
+
+```java
+/**
+ * 自定义手机注解
+ */
+@Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE })
+@Retention(RUNTIME)
+@Documented
+@Constraint(validatedBy = { PhoneValidator.class })
+public @interface Phone {
+    String message() default "手机号码格式异常";
+    Class<?>[] groups() default { };
+    Class<? extends Payload>[] payload() default { };
+}
+```
+
+除了注解是肯定不够的，还需要一个注解约束验证器来验证注解元素 PhoneValidator
+
+#### 注解约束校验器
+
+需要实现ConstraintValidator接口，重写里面的isValid方法
+
+```java
+/**
+ * 手机验证注解
+ */
+public class PhoneValidator implements ConstraintValidator<Phone, String> {
+
+    private static final String REGEX = "^1[3456789]\\d{9}$";
+
+    /**
+     * @param value
+     * @param context
+     * @return：返回 true 表示效验通过
+     */
+    @Override
+    public boolean isValid(String value, ConstraintValidatorContext context) {
+        // 不为null才进行校验
+        if (value != null) {
+            return value.matches(REGEX);
+        }
+        return true;
+    }
+}
+```
+
+里面有两个泛型
+
+- 第一个：要验证的注解类型
+- 第二个：要验证的数据类型
+
+`isValid`: 注意：Bean Validation 规范建议将 null 值视为有效值。如果一个元素 null 不是一个有效值，则应该显示的用 @NotNull 标注。
+
+
+
+### 4. Java Bean约束
+
+
+
+
+
+
+
+### 5. 分组校验
+
+
+
+
+
+### 6. 嵌套校验
+
+
+
+
+
+### 7. 集合校验
 
