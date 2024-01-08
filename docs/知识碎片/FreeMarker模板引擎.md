@@ -358,6 +358,13 @@ user.dir获取)+相对路径进行拼接
 }
 ```
 
+### 这里可能会有中文乱码
+可以改成如下
+```java
+Template template = configuration.getTemplate(templateName,"utf-8");
+BufferedWriter out = new BufferedWriter(new OutputStreamWriter(Files.newOutputStream(Paths.get(outputPath)), StandardCharsets.UTF_8));
+```
+
 # 重点
 这个网站[http://freemarker.foofun.cn/app_faq.html#faq_number_grouping](http://freemarker.foofun.cn/app_faq.html#faq_number_grouping)
 如果之后有问题，大部分都可以在这里解决，找到答案
