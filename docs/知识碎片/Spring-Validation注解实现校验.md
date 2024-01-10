@@ -5,7 +5,8 @@
 > 本站地址：[https://flycode.icu](https://flycode.icu)
 
 ## 背景
-先让我们看以下代码，如果要进行处理，应该如何处理
+
+先让我们观察以下代码，如果要进行处理，应该如何处理
 ```java
 @Data
 public class User {
@@ -140,7 +141,7 @@ public class UserController {
 @Valid 是 JSR303（Java Specification Requests）声明的，其中 JSR303 是JAVA EE 6 中的一项子规范，叫做 Bean Validation，为 JavaBean 验证定义了相应的元数据模型和 API，需要注意的是，JSR 只是一项标准，它规定了一些校验注解的规范，但没有实现，
 Hibernate Validation是其具体实现，并对其进行了一些扩展，添加了一些实用的自定义校验注解。
 
- Spring中集成了这些内容，可以方面我们使用，由于找到的相关资料都是比较杂乱的，有些时间过于久远，所以这边笔者就整理了一些认为比较常用的内容。
+ Spring中集成了这些内容，可以方便我们使用，由于找到的相关资料都是比较杂乱的，有些时间过于久远，所以这边笔者就整理了一些认为比较常用的内容。
 
 [Spring-Validation官方地址](https://www.logicbig.com/tutorials/spring-framework/spring-core/core-validation.html)
 
