@@ -19,23 +19,6 @@ export default [
         "/qrcode-flycodeu.jpg",
     popoverDesc: "程序员飞云",
   },
-  // {
-  //   title: "交流群",
-  //   icon: "/icon/weixin.png",
-  //   popoverTitle:
-  //     '<span style="font-size:0.8rem;font-weight:bold;">扫码添加 <span style="color:red;">编程导航小助手微信</span>，拉你进专属编程学习交流群</span>',
-  //   popoverUrl:
-  //     "/qrcode-codenavhelper.png",
-  // },
-  // {
-  //   title: "下资料",
-  //   icon: "/icon/xiazai.png",
-  //   popoverTitle:
-  //     '<span style="font-size:0.8rem;font-weight:bold;">扫码关注站长公众号，回复 <span style="color:red;">学习</span> 获取海量编程学习资源「无任何套路」</span>',
-  //   popoverUrl:
-  //     "/qrcode-mpcoder_yupi.jpg",
-  //   popoverDesc: "公众号: 程序员鱼皮",
-  // },
   {
     title: "支持我",
     icon: "/icon/dianzan.png",
