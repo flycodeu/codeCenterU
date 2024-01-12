@@ -2,6 +2,16 @@ import {NavItem} from "vuepress/config";
 
 export default [
     {
+        text: "数据结构",
+        link: '/数据结构/',
+        items: [
+            {
+                text: "线性数据结构",
+                link: '/线性数据结构/'
+            }
+        ]
+    },
+    {
         text: "编程学习",
         link: '/编程学习/',
         items: [

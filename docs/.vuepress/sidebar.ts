@@ -6,9 +6,11 @@ import javaDesignSideBar from "./sidebars/javaDesignSideBar";
 import aiLearnSideBar from "./sidebars/aiLearnSideBar";
 import frameworkSideBar from "./sidebars/frameworkSideBar";
 import commonpluginSideBar from "./sidebars/commonpluginSideBar";
+import dataStructuresBar from "./sidebars/dataStructuresBar";
 // @ts-ignore
 export default {
     // 降级，默认根据文章标题渲染侧边栏
+    "/数据结构/": dataStructuresBar,
     "/编程学习/": codeLearnSideBar,
     "/知识碎片/": knowledgeShareSideBar,
     "/设计模式/": javaDesignSideBar,
