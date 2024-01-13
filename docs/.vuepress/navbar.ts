@@ -68,6 +68,16 @@ export default [
         link: "/设计模式/"
     },
     {
+        text: "算法",
+        link: '/算法/',
+        items: [
+            {
+                text: "链表",
+                link: '/链表/'
+            }
+        ]
+    },
+    {
         text: "常用框架",
         link: '/常用框架/'
     },
