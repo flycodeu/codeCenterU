@@ -75,6 +75,8 @@ FreeMarker主要优点是不会和其他框架绑定，是个Java项目就可以
 
 基本上不需要特地的去学习，看一下相关知识就可以了。
 
+
+
 ### FreeMarker实战Demo
 
 1. 首先需要创建一个Maven项目，引入对应的依赖
@@ -197,6 +199,62 @@ FreeMarker主要优点是不会和其他框架绑定，是个Java项目就可以
 ```java
 cfg.setNumberFormat("0.######")
 ```
+
+
+
+### 常用语法
+
+1. 插值
+
+```
+${100 + money}
+```
+
+2. 分支判断
+
+```
+<#if user == "fly">
+  fly
+<#else>
+  dogfly
+</#if>
+```
+
+3. 默认值
+
+```
+${user!"用户为空"}
+```
+
+4. 循环
+
+```
+<#list users as user>
+  ${user}
+</#list>
+```
+
+5.  宏定义
+
+```
+<#macro card userName>     
+---------    
+${userName}
+---------
+</#macro>
+```
+
+使用
+
+```
+<@card userName="fly"/>
+```
+
+
+
+其余的直接查看对应的官方文档就可以，这边是几个比较常用的语法。
+
+
 
 ### 回归背景
 

@@ -1,10 +1,53 @@
-# picocli学习
+# Java命令行开发
 
 > 本文作者：程序员飞云
 >
 > 本站地址：[https://flycode.icu](https://flycode.icu)
 
-# 1. 什么是picocli
+# 1. 如何开发一个java命令行程序
+首先想到的是通过`Scanner`，获取到用户在命令好界面输入的内容，然后解析对应的内容，执行相应的命令。但是有一些缺点
+
+1. 需要解析用户的输入
+
+例如我们常用的mysql登录,`mysql -u xxx -p `，我们需要先提取参数，然后再执行，如果这个命令较为复杂，一个主命令下面有多个子命令，那么如何从复杂的命令提取相应的值？
+
+2. 如何进行与用户的交互
+
+例如我们登录数据库的时候，我们的密码可以不输入在一行里面，然后命令行给出提示输入缺少的参数，然后继续执行命令。
+
+3. 高级命令
+
+比如`git --help`等等，我如何配置自己的命令行能够支持帮助命令，颜色高亮等等内容。
+
+很显然，这种方式缺点较多。
+
+
+
+这边收集了一部分可以支持开发的工具，第三方库
+
+1. 命令行开发框架
+
+> 专门用于开发命令行的框架
+
+[Picocli](https://github.com/remkop/picocli) : 支持帮助手册，颜色高亮，子命令等等功能，而且作者持续更新内容
+
+2. 控制台输入处理库
+
+> 能够对用户的输入进行处理的库
+
+[Jline](https://github.com/jline/jline3): 支持自动补全，查看历史命令等等，但是缺点是官方文档内容较少。
+
+3. 命令行解析库
+
+> 支持对命令行进行解析取值的库
+
+[JCommander](https://github.com/cbeust/jcommander): 注解驱动，可以将命令映射到对象上面去
+
+[Apache Commons CLI](https://github.com/apache/commons-cli): 学习简单，使用容易，但是功能不多，参考地址[https://blog.csdn.net/liuxiangke0210/article/details/78141887](https://blog.csdn.net/liuxiangke0210/article/details/78141887)
+
+
+
+相对而言Picocli更加好一点，毕竟是专业的命令行开发框架，所以接下来笔者会学习使用这个框架。
 
 # 2. 入门Demo
 
