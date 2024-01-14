@@ -6,8 +6,6 @@
 
 以下笔者将会使用一个简单的demo来快速创建一个Starter，了解如何使用。创建一个配置，能够读取配置里面的用户名，用于展示。
 
-
-
 ## 如何制作自己的Starter
 
 ### 1. 创建SpringBoot项目，引入依赖
@@ -16,19 +14,17 @@
 
 ```xml
        <!--自动配置yml提示-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-configuration-processor</artifactId>
+    <optional>true</optional>
+</dependency>
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <optional>true</optional>
+</dependency>
 ```
-
-
 
 ### 2. 修改pom配置
 
@@ -95,9 +91,7 @@ public class FlyClient {
 }
 ```
 
-
-
-### 6.  编写spring.factories
+### 6. 编写spring.factories
 
 在resources里面创建spring.factories文件，编写以下配置，用于自动加载的配置类
 
@@ -105,7 +99,7 @@ public class FlyClient {
 org.springframework.boot.autoconfigure.EnableAutoConfiguration= com.fly.flydemosdk.NameClientConfig(这部分是自己配置所在的地址)
 ```
 
-### 7.  install安装
+### 7. install安装
 
 点击install安装Starter到本地依赖
 
@@ -135,8 +129,6 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration= com.fly.flydemos
 
 可以看到已经识别除了对应的配置信息
 
-
-
 ### 8. 编写测试
 
 ![image-20240114152441831](http://cdn.flycode.icu/codeCenterImg/202401141524889.png)
@@ -145,12 +137,26 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration= com.fly.flydemos
 
 很明显，输出了当前的使用者以及传入的配置参数信息
 
+## 总体步骤如下
 
-## 笔者Starter
+1. 需要一个SpringBoot项目，引入Spring-boot-configuration-processor依赖
+2. 编写提供服务的接口
+3. 编写客户端调用服务的类
+4. 添加@ConfigurationProperies注解来标注用户再配置文件输入的提示
+5. 再resources里面创建META-INFO文件夹
+6. 里面编写spring.factories的配置，主要就是通过autoConfiguration来识别到对应启动的客户端
+7. install来安装依赖，或者deploy来部署依赖
+
+## 笔者项目
+
+飞云API里面配置了对应的Starter如下，可以引入自己的项目调用接口。
+具体信息请看 [飞云API](/docs/项目实战/飞云API/飞云API.md)
+
 ```xml
-        <dependency>
-            <groupId>io.github.flybase1</groupId>
-            <artifactId>flyapi-client-sdk</artifactId>
-            <version>1.0.0.Release</version>
-        </dependency>
+
+<dependency>
+    <groupId>io.github.flybase1</groupId>
+    <artifactId>flyapi-client-sdk</artifactId>
+    <version>1.0.0.Release</version>
+</dependency>
 ```
