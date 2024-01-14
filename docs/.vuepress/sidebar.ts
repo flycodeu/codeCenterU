@@ -8,6 +8,7 @@ import frameworkSideBar from "./sidebars/frameworkSideBar";
 import commonpluginSideBar from "./sidebars/commonpluginSideBar";
 import dataStructuresBar from "./sidebars/dataStructuresBar";
 import algorithmBar from "./sidebars/algorithmBar";
+import projectBar from "./sidebars/projectBar";
 // @ts-ignore
 export default {
     // 降级，默认根据文章标题渲染侧边栏
@@ -19,5 +20,6 @@ export default {
     "/常用框架/": frameworkSideBar,
     "/常用插件/": commonpluginSideBar,
     "/AI使用/": aiLearnSideBar,
+    "/个人项目/": projectBar,
     "/": "auto",
 } as SidebarConfig4Multiple;

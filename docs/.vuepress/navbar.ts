@@ -88,6 +88,16 @@ export default [
     {
         text: "AI使用",
         link: '/AI使用/'
+    },
+    {
+        text: "个人项目",
+        link: '/个人项目/',
+        items: [
+            {
+                text: "飞云API",
+                link: "飞云API.md"
+            }
+        ]
     }
 
 ] as NavItem[];
