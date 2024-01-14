@@ -95,7 +95,7 @@ export default [
         items: [
             {
                 text: "飞云API",
-                link: "飞云API.md"
+                link: '/飞云API/'
             }
         ]
     }
