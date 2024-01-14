@@ -150,7 +150,7 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration= com.fly.flydemos
 ## 笔者项目
 
 飞云API里面配置了对应的Starter如下，可以引入自己的项目调用接口。
-具体信息请看 [飞云API](/docs/项目实战/飞云API/飞云API.md)
+具体信息请看 [飞云API](/项目实战/飞云API/飞云API.md)
 
 ```xml
 
