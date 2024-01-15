@@ -79,7 +79,17 @@ export default [
     },
     {
         text: "常用框架",
-        link: '/常用框架/'
+        link: '/常用框架/',
+        items: [
+            {
+                text: 'Spring',
+                link: '/Spring/'
+            },
+            {
+                text: "SpringBoot",
+                link: '/SpringBoot/'
+            }
+        ]
     },
     {
         text: "实用插件",
