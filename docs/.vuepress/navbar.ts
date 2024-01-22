@@ -74,6 +74,10 @@ export default [
             {
                 text: "链表",
                 link: '/链表/'
+            },
+            {
+                text: "数组",
+                link: '/数组/'
             }
         ]
     },
