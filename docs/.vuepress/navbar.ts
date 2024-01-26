@@ -78,6 +78,10 @@ export default [
             {
                 text: "数组",
                 link: '/数组/'
+            },
+            {
+                text: "栈",
+                link: '/栈/'
             }
         ]
     },

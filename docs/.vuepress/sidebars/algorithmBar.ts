@@ -5,7 +5,8 @@ export default [
         collapsable: false,
         children: [
             '链表/',
-            '数组/'
+            '数组/',
+            '栈/'
         ],
     },
 ];
