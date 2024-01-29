@@ -8,7 +8,7 @@ export default [
             "FreeMarker模板引擎.md",
             "复制文件.md",
             "Java命令行开发.md",
-            "文件上传下载.md",
+            "对象存储使用.md",
             "自定义Starter.md"
         ],
     },

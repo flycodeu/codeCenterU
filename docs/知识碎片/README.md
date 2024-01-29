@@ -17,6 +17,8 @@
 
 [Java命令行开发](Java命令行开发.md)
 
-[文件上传下载](文件上传下载.md)
+[对象存储COS的使用](对象存储使用.md)
 
 [自定义Starter](自定义Starter.md)
+
+[XXL-JOB简单使用](XXL-JOB简单实战.md)
