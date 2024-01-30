@@ -82,6 +82,14 @@ export default [
             {
                 text: "栈",
                 link: '/栈/'
+            },
+            {
+                text: "哈希",
+                link: '/哈希/'
+            },
+            {
+                text: "队列",
+                link: '/队列/'
             }
         ]
     },
