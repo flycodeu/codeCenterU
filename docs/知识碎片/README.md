@@ -22,3 +22,5 @@
 [自定义Starter](自定义Starter.md)
 
 [XXL-JOB简单使用](XXL-JOB简单实战.md)
+
+[存储优化](存储优化.md)
