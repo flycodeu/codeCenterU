@@ -9,6 +9,15 @@
 
 这部分的核心主要是记录一些小的知识点，并不是项目笔记，学习笔记之类的内容。
 
+个人总结
+
+[性能优化](性能优化.md)
+
+[存储优化](存储优化.md)
+
+
+业务学习
+
 [Spring-Validation注解实现校验](Spring-Validation注解实现校验.md)
 
 [FreeMarker模板引擎](FreeMarker模板引擎.md)
@@ -23,4 +32,3 @@
 
 [XXL-JOB简单使用](XXL-JOB简单实战.md)
 
-[存储优化](存储优化.md)
