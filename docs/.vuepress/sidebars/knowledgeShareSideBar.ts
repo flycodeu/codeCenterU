@@ -9,7 +9,9 @@ export default [
             "复制文件.md",
             "Java命令行开发.md",
             "对象存储使用.md",
-            "自定义Starter.md"
+            "自定义Starter.md",
+            "性能优化.md",
+            "存储优化.md"
         ],
     },
 ];
