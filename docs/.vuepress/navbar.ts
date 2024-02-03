@@ -94,6 +94,10 @@ export default [
             {
                 text: "队列",
                 link: '/队列/'
+            },
+            {
+                text: "树",
+                link: '/树/'
             }
         ]
     },
