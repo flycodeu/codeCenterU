@@ -5,7 +5,7 @@ export default [
         collapsable: false,
         children: [
             '线性数据结构/',
-            '树/'
+            '树数据结构/'
         ],
     },
 ];
