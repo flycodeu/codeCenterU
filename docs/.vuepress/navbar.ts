@@ -8,6 +8,10 @@ export default [
             {
                 text: "线性数据结构",
                 link: '/线性数据结构/'
+            },
+            {
+                text: '树',
+                link: '/树/'
             }
         ]
     },
