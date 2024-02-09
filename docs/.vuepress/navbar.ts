@@ -23,6 +23,10 @@ export default [
                 text: "Java学习",
                 link: '/Java学习/'
             },
+            {
+                text: "C++学习",
+                link: '/C++学习/'
+            }
             // {
             //     text: "Linux学习",
             //     link: '/Linux学习/'
