@@ -5,3 +5,4 @@
 > 本站地址：[https://flycode.icu](https://flycode.icu)
 
 
+[C++快速入门](C++快速入门.md)
