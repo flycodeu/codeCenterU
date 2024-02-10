@@ -157,7 +157,9 @@ int main() {
 
 
 
-## 定义变量和数据
+## 变量
+
+### 定义变量
 
 局部变量必须要赋值
 
@@ -180,3 +182,242 @@ int main() {
 通过`::`就是获取全局变量
 
 ![image-20240209202006113](http://cdn.flycode.icu/codeCenterImg/image-20240209202006113.png)
+
+
+
+
+
+## 常量
+
+### 1. 使用标识符,预处理（不推荐）
+
+```C++
+#define PI = 3.14;
+```
+
+### 2. 使用const限定符
+
+```C++
+const float pi = 3.14;
+```
+
+
+
+
+
+## 基本数据类型
+
+### 整型
+
+char、short、int，long，long long（11里面新增）、bool
+
+
+
+| 类型      | 字节 | 范围             |
+| --------- | ---- | ---------------- |
+| char      | 1    |                  |
+| short     | 2    | -32768-----32767 |
+| int       | 4    | -2^31-----2^31-1 |
+| long      | 4或8 |                  |
+| long long | 8    |                  |
+
+```C++
+int main() {
+	short a = 20;
+	cout << "short size=" << sizeof a << endl;
+
+	int a2 = 20;
+	cout << "int size=" << sizeof a2 << endl;
+
+	long a3 = 20;
+	cout << "long size=" << sizeof a3 << endl;
+
+	long long a4 = 20;
+	cout << "long long  size=" << sizeoasf a4 << endl;
+
+}
+
+}
+```
+
+![image-20240210162400367](http://cdn.flycode.icu/codeCenterImg/image-20240210162400367.png)
+
+
+
+
+
+### 无符号整型
+
+只会表示0和正数，使用`unsigned`
+
+```C++
+int main() {
+	short a = 40000;
+	cout << "short=" <<  a << endl;
+
+	unsigned short a2 = 4000;
+	cout << "unsigned short" <<  a2 << endl;
+}
+```
+
+![image-20240210163246414](http://cdn.flycode.icu/codeCenterImg/image-20240210163246414.png)
+
+如果超出了固定的最大范围，值就会从最小值开始，但是使用`unsigned`表示后，范围就扩大了，第一位就不是表示正负了，而是表示值
+
+
+
+**一般推荐int，超出了int使用long long，确定值不能小于0使用`unsigned`**
+
+
+
+### 字符类型
+
+`char`
+
+一般会将数字转换成对应的ASCII
+
+```C++
+	char s1 = 65;
+	cout << "s1 = " << s1 << endl;
+```
+
+输出`s1 = A`
+
+
+
+### bool类型
+
+1表示真，0表示假
+
+```C++
+bool b1 = true;
+cout << "b1=" << b1 << endl;
+```
+
+
+
+### 浮点类型
+
+单精度float: 4字节
+
+双精度double： 8字节，可以使用科学计数法
+
+```C++
+float f = 2.1;
+double pi = 3.14e-23;
+```
+
+
+
+### 字面值常量
+
+1. 整型
+
+2. 浮点型
+
+![image-20240210170711916](http://cdn.flycode.icu/codeCenterImg/image-20240210170711916.png)
+
+```C++
+// 整型
+30;
+036L;
+0x1ELL;
+
+// 浮点类型
+3.14f;
+1.25L;
+```
+
+3. 字符类型
+
+```C++
+'A'
+'11'
+"AS"
+```
+
+4. 转义类型
+
+![image-20240210171001805](http://cdn.flycode.icu/codeCenterImg/image-20240210171001805.png)
+
+4. 布尔类型
+
+
+
+## 类型转换
+
+![image-20240210171438303](http://cdn.flycode.icu/codeCenterImg/image-20240210171438303.png)
+
+![image-20240210174640385](http://cdn.flycode.icu/codeCenterImg/image-20240210174640385.png)
+
+
+
+## 案例
+
+### 1. 输出九九乘法表
+
+```c++
+bool isPrime(unsigned int num) {
+	bool res = true;
+
+	if (num <=2) {
+		res = true;
+	}
+
+	for (int i = 2; i < num; i++) {
+		if (num % i == 0) {
+			res = false;
+		}
+	}
+
+	return res;
+}
+
+int main() {
+	int num;
+	cout << "输入数字" << endl;
+	cin >> num;
+	cout << num << (isPrime(num) ? "是质数" : "不是质数") << endl;
+	return 0;
+
+}
+```
+
+### 2. 猜数字
+
+随机生成0-100的数字，用户输入数字来猜是否正确，一共5次机会。
+
+```c++
+int main() {
+	cout << "0-100整数数，有5次机会" << endl;
+	// 当前时间的随机种子,伪随机
+	srand(time(0));
+	// 生成0-100整数
+	int target = rand() % 100;
+	// 循环次数
+	int n = 0;
+	while (n < 5) {
+		int num;
+		cout << "请输入数字：" << endl;
+
+		cin >> num;
+		if (num > target) {
+			cout << "猜大了" << endl;
+		}
+		else if (num < target) {
+			cout << "猜小了" << endl;
+		}
+		else {
+			cout << "猜对了，幸运数字是："<<num<< endl;
+			break;
+		}
+
+		n++;
+	}
+	if (n == 5) {
+		cout << "没有猜中" << endl;
+	}
+	cin.get();
+	cin.get();
+}
+```
