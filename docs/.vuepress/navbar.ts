@@ -25,7 +25,7 @@ export default [
             },
             {
                 text: "C++学习",
-                link: '/C++学习/'
+                link: '/C-学习/'
             }
             // {
             //     text: "Linux学习",
