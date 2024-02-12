@@ -102,6 +102,10 @@ export default [
             {
                 text: "树",
                 link: '/树/'
+            },
+            {
+                text: "二分查找",
+                link: '/二分查找/'
             }
         ]
     },
