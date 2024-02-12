@@ -140,6 +140,10 @@ export default [
                 link: '/飞云API/'
             }
         ]
+    },
+    {
+        text:"优质文章",
+        link: '/优质文章专栏/'
     }
 
 ] as NavItem[];
