@@ -15,6 +15,16 @@
 
 [存储优化](存储优化.md)
 
+[支付宝沙箱](支付宝沙箱.md)
+
+[简单Java爬虫](简单Java爬虫.md)
+
+[RabbitMq配置和使用](RabbitMq配置及使用.md)
+
+[SpringBoot发送简单邮件](SpringBoot发送简单邮件.md)
+
+[SpringBoot结合七牛云](SpringBoot结合七牛云.md)
+
 [Spring-Validation注解实现校验](Spring-Validation注解实现校验.md)
 
 [FreeMarker模板引擎](FreeMarker模板引擎.md)
@@ -28,4 +38,7 @@
 [自定义Starter](自定义Starter.md)
 
 [XXL-JOB简单使用](XXL-JOB简单实战.md)
+
+
+
 
