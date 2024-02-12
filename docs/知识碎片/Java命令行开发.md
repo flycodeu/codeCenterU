@@ -2,7 +2,7 @@
 
 > 本文作者：程序员飞云
 >
-> 本站地址：[https://flycode.icu](https://flycode.icu)
+> 本站地址：[https://www.flycode.icu](https://www.flycode.icu)
 
 # 1. 如何开发一个java命令行程序
 首先想到的是通过`Scanner`，获取到用户在命令好界面输入的内容，然后解析对应的内容，执行相应的命令。但是有一些缺点

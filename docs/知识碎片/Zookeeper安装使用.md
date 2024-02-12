@@ -1,13 +1,8 @@
----
-title: Zookeeper安装使用
-tags:
-  - Zookeeper
-  - 安装
-categories:
-  - Zookeeper
-abbrlink: 194b14f1
-date: 2023-08-01 17:32:53
----
+# Zookeeper安装使用
+> 本文作者：程序员飞云
+>
+> 本站地址：[https://www.flycode.icu](https://www.flycode.icu)
+
 ## 一. 原生安装
 ### 1. 环境准备
 必须要有java8以上版本

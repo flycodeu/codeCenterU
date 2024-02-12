@@ -1,7 +1,7 @@
 # 自定义Starter
 > 本文作者：程序员飞云
 >
-> 本站地址：[https://flycode.icu](https://flycode.icu)
+> 本站地址：[https://www.flycode.icu](https://www.flycode.icu)
 
 ## 为什么要创建Starter？
 
