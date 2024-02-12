@@ -113,8 +113,8 @@ picture.html上传界面回显照片
 启动项目浏览器输入http://localhost:8080/img/back,进行文件上传
 
 
-# 2. ajax版本文件上传回显
-## 2.1 controller编写
+## 2. ajax版本文件上传回显
+### 2.1 controller编写
 ```java
 
 @RequestMapping( "/file" )
@@ -146,7 +146,7 @@ public class FileControllerAjax {
     }
 }
 ```
-## 2.2 html界面编写
+### 2.2 html界面编写
 uploadFile.html放在resources里面的static里面
 ```html
 <!DOCTYPE html>
