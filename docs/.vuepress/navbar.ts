@@ -106,6 +106,10 @@ export default [
             {
                 text: "二分查找",
                 link: '/二分查找/'
+            },
+            {
+                text:"快速排序",
+                link: '/快速排序/'
             }
         ]
     },
