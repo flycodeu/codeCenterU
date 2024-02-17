@@ -110,6 +110,10 @@ export default [
             {
                 text:"快速排序",
                 link: '/快速排序/'
+            },
+            {
+                text: "位运算",
+                link: '/位运算/'
             }
         ]
     },
