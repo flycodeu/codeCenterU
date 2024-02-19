@@ -350,6 +350,232 @@ double pi = 3.14e-23;
 
 ![image-20240210174640385](http://cdn.flycode.icu/codeCenterImg/image-20240210174640385.png)
 
+类型转换注意事项
+
+1. 进行计算的时候，计算结果的数据类型会向上对齐
+2. short和char运算的时候，会自动转换为int类型
+3. 浮点数向整数转型的时候，会舍去小数点后面的数，只保留整数
+
+
+
+## 控制台输入
+
+### 1. 单个输入
+
+```c++
+int num1, num2, num3;
+cin >> num1;
+cin >> num2;
+cin >> num3;
+cout << "num1=" << num1 << "\t num2=" << num2 << "\t num3=" << num3 << endl;
+```
+
+上面运行可以换行输入也可以空格分开，因为cin里面有个缓冲区，数据缓存在里面，然后拿出来进行操作。
+
+
+
+### 2. 连续输入
+
+支持连续的输入参数，但是需要使用空格分开
+
+```c++
+	int num1, num2, num3;
+	cin >> num1 >> num2 >> num3;
+```
+
+
+
+### 3. 错误处理
+
+比如用户输入了不符合条件的命令，程序无法识别。
+
+cin里面有四个方法
+
+- cin.good()：符合记录
+- cin.fail():    不符合记录
+- cin.bad():   
+- cin.clear(): 恢复状态，清除错误状态
+
+```c++
+	int num4;
+	cout << "输入整数" << endl;
+	cin >> num4;
+	cout << "num4=" <<num4 << endl;
+	cout << "good = " << cin.good() << "\t fail= " << cin.fail() << endl;
+
+
+	int num5;
+	cout << "输入整数" << endl;
+	cin >> num5;
+	cout <<"num5=" << num5 << endl;
+```
+
+如果不满足这个第一次的int整数，而是字符串，此时的标志就是fail，并且此时会阻塞后续的命令执行
+
+![image-20240219164853258](http://cdn.flycode.icu/codeCenterImg/image-20240219164853258.png)
+
+引入cin.clear()可以清除当前状态，但是依然阻塞后面的命令执行，因为缓冲区还是会影响后面的执行
+
+```java
+	int num4;
+	cout << "输入整数" << endl;
+	cin >> num4;
+	cout << "num4=" <<num4 << endl;
+	cout << "good = " << cin.good() << "\t fail= " << cin.fail() << endl;
+	cin.clear();
+	cout << "good = " << cin.good() << "\t fail= " << cin.fail() << endl;
+```
+
+![image-20240219165045793](http://cdn.flycode.icu/codeCenterImg/image-20240219165045793.png)
+
+可以使用ignore来忽略一整行
+
+```c++
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+```
+
+![image-20240219165521935](http://cdn.flycode.icu/codeCenterImg/image-20240219165521935.png)
+
+## 宏定义
+
+使用`#define`
+
+```c++
+#include<iostream>
+using namespace std;
+#define SUCCESS_CODE 0
+#define EXPR 2+2
+
+int main() {
+	cout << SUCCESS_CODE << endl;
+
+	cout << EXPR << endl;
+
+	// 结果是 2 + 2 * 2 + 2
+	cout << EXPR * EXPR << endl;
+	return 0;
+}
+```
+
+宏定义可以看作是静态字符串替换
+
+
+
+## 命名空间(namespace)
+
+为了避免不同的类库中的常量，变量，方法等等出现冲突，我们可以使用命名空间来更好的控制标志符的作用域
+
+命名空间的使用
+
+命名空间 :: xxx
+
+### 基础使用
+
+```java
+#include<iostream>
+
+namespace A {
+	int num = 10;
+}
+
+namespace B {
+	int num = 20;
+}
+
+
+int main() {
+	// 使用命名空间
+	std::cout << A::num << std::endl;
+
+}
+```
+
+命名空间是开放的，可以随时往里面添加
+
+```c++
+namespace B {
+	int num = 20;
+}
+
+namespace B {
+	int num2 = 20;
+}
+
+```
+
+
+
+### 使用事项（范围）
+
+定义namespace B
+
+```c++
+namespace B {
+	const int MAX_SCORE = 1120;
+}
+```
+
+```c++
+using namespace std;
+const int MAX_SCORE = 20;
+cout << MAX_SCORE << endl;
+
+using namespace B;
+cout << MAX_SCORE << endl; // 依然是方法里面定义的常量 20
+cout << B::MAX_SCORE << endl; // 只有这样才能使用命名空间里面的常量 1120
+```
+
+1. 如果引用的命名空间中存在和当前的命名空间中同名字的成员，默认采用当前命名空间里面的成员
+2. 如果引用的多个命名空间里面有重复的成员且当前命名空间里面没有这个成员，需要明确指出究竟采用的哪个里面的成员。
+
+
+
+命名空间的嵌套
+
+```c++
+#include<iostream>
+
+namespace A {
+	int num = 10;
+	namespace AB {
+		int num = 100;
+	}
+}
+
+namespace B {
+	int num = 20;
+}
+
+
+int main() {
+	// 使用命名空间
+	std::cout << A::num << std::endl;
+	std::cout << B::num << std::endl;
+
+	// 多级命名空间
+	std::cout << A::AB::num << std::endl;
+
+}
+```
+
+### using使用命名空间
+
+```c++
+// using使用指定命名空间里面的成员
+using A::num;
+std::cout << num << std::endl;
+
+// 使用命名空间
+using namespace A;
+std::cout << num << std::endl;
+```
+
+## 位运算
+
+![image-20240219173720472](http://cdn.flycode.icu/codeCenterImg/image-20240219173720472.png)
+
+负数使用位移是向下取整的，例如  -3.12 会转换成 -4
+
 
 
 ## 案例
@@ -421,3 +647,51 @@ int main() {
 	cin.get();
 }
 ```
+
+### 3. 水仙花数字
+
+水仙花数是指一个3位数，每个位上的数字的3次幂之和等于它本身。
+
+> 1^3+5^3+3^3=153
+
+```c++
+#include<iostream>
+using namespace std;
+
+int main() {
+	int num=999;
+	do {
+		int index1 = num / 100;
+		int index2 = num / 10 % 10;
+		int index3 = num % 10;
+
+		int res = pow(index1, 3) + pow(index2, 3) + pow(index3, 3);
+		if (res == num) {
+			cout << "水仙花数字：" << res << endl;
+		}
+		num--;
+	} while (num<=999 && num>=100);
+}
+```
+
+### 4. 敲桌子
+
+从1开始到数字100，如果个位有7或者十位有7，或者是7的倍数，打印敲桌子，其余数字正常输出。
+
+```c++
+#include<iostream>
+using namespace std;
+
+int main() {
+	for (int i = 1; i < 100; i++) {
+		// 十位，个位，7倍数
+		if (i/10 == 7 || i%10 == 7 || i % 7 == 0) {
+			cout << "敲桌子" << endl;
+		}
+		else {
+			cout << i << endl;
+		}
+	}
+}
+```
+
