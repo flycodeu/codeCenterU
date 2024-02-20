@@ -114,6 +114,10 @@ export default [
             {
                 text: "位运算",
                 link: '/位运算/'
+            },
+            {
+                text:"数学与数字",
+                link: '/数学与数字/'
             }
         ]
     },
