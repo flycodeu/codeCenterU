@@ -18,7 +18,8 @@ export default [
             "SpringBoot发送简单邮件.md",
             "SpringBoot结合七牛云.md",
             "XXL-JOB简单实战.md",
-            "前端记住密码功能.md"
+            "前端记住密码功能.md",
+            '路由守卫.md'
         ],
     },
 ];
