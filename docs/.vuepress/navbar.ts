@@ -116,8 +116,8 @@ export default [
                 link: '/位运算/'
             },
             {
-                text:"数学与数字",
-                link: '/数学与数字/'
+                text:"数字与数学",
+                link: '/数字与数学/'
             }
         ]
     },
