@@ -145,7 +145,9 @@ public class CheckResult {
 }
 ```
 
-### 4. 通用返回类
+### 4. 通用类
+
+#### 通用返回类
 
 ```java
 /**
@@ -178,7 +180,7 @@ public class BaseResponse<T> implements Serializable {
 }
 ```
 
-### 5. 返回工具类
+#### 通用工具类
 
 ```java
 
@@ -231,11 +233,72 @@ public class ResultUtils {
 }
 ```
 
-### 6. 编写config配置文件
+#### 通用异常拦截
+
+```java
+
+/**
+ * 全局异常处理器
+ */
+@RestControllerAdvice
+@Slf4j
+public class GlobalExceptionHandler {
+
+    @ExceptionHandler( BusinessException.class )
+    public BaseResponse<?> businessExceptionHandler(BusinessException e) {
+        log.error("businessException: " + e.getMessage(), e);
+        return ResultUtils.error(e.getCode(), e.getMessage());
+    }
+
+    @ExceptionHandler( RuntimeException.class )
+    public BaseResponse<?> runtimeExceptionHandler(RuntimeException e) {
+        log.error("runtimeException", e);
+        return ResultUtils.error(ErrorCode.SYSTEM_ERROR, e.getMessage());
+    }
+
+
+    /**
+     * @RequestBody 上校验失败后抛出的异常是 MethodArgumentNotValidException 异常。
+     */
+    @ExceptionHandler( value = MethodArgumentNotValidException.class )
+    public BaseResponse<?> handler(MethodArgumentNotValidException e) {
+        BindingResult bindingResult = e.getBindingResult();
+        ObjectError objectError = bindingResult.getAllErrors().stream().findFirst().get();
+        log.error("实体类校验异常：-------------{}", objectError.getDefaultMessage());
+        return ResultUtils.error(ErrorCode.PARAMS_ERROR, objectError.getDefaultMessage());
+    }
+
+    /**
+     * 不加 @RequestBody注解，校验失败抛出的则是 BindException
+     */
+    @ExceptionHandler( value = BindException.class )
+    public BaseResponse<?> exceptionHandler(BindException e) {
+        String messages = e.getBindingResult().getAllErrors()
+                .stream()
+                .map(ObjectError::getDefaultMessage)
+                .collect(Collectors.joining("；"));
+        return ResultUtils.error(ErrorCode.PARAMS_ERROR, messages);
+    }
+
+    /**
+     * @RequestParam 上校验失败后抛出的异常是 ConstraintViolationException
+     */
+    @ExceptionHandler( {ConstraintViolationException.class} )
+    public BaseResponse<?> methodArgumentNotValid(ConstraintViolationException exception) {
+        String message = exception.getConstraintViolations().stream().map(ConstraintViolation::getMessage).collect(Collectors.joining("；"));
+        return ResultUtils.error(ErrorCode.PARAMS_ERROR, message);
+    }
+
+}
+```
 
 
 
-### 7. 编写handler处理器
+### 5. 编写config配置文件
+
+
+
+### 6. 编写handler处理器
 
 
 
@@ -304,3 +367,198 @@ public class LoginFailureHandler implements AuthenticationFailureHandler {
     }
 }
 ```
+
+### 7.重写UserDetailService
+
+```java
+/**
+ * 自定义userDetails
+ */
+@Service
+public class MyUserDetailServiceImpl implements UserDetailsService {
+    @Resource
+    private SysUserServiceImpl sysUserService;
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        SysUser sysUser = sysUserService.getByUserAccount(username);
+        if (sysUser == null) {
+            throw new UsernameNotFoundException("用户账号或密码错误");
+        }
+        if (sysUser.getStatus() == 1) {
+            throw new BusinessException(ErrorCode.ACCOUNT_BLOCK);
+        }
+        return new User(sysUser.getUseraccount(), sysUser.getUserpassword(), getUserAuthority(sysUser.getUserid()));
+
+    }
+
+    public List<GrantedAuthority> getUserAuthority(Long userId) {
+        // 格式 ROLE_admin,ROLE_user,system:user:delete,system:user:add
+        String authority = sysUserService.getUserAuthorityInfo(userId);
+        return AuthorityUtils.createAuthorityList(authority);
+    }
+}
+
+```
+
+### 8. JWT拦截器
+
+```java
+
+/**
+ * jwt拦截器
+ */
+@Slf4j
+public class  JwtAuthenticationFilter extends BasicAuthenticationFilter {
+
+    @Resource
+    private SysUserServiceImpl sysUserService;
+
+    private static final String[] URL_WHITELIST = {
+            "/api/login",
+            "/api/phoneLogin",
+            "/api/testLogin",
+            "/api/test/test",
+            "/api/sms/smsCode",
+            "/api/captcha/code",
+            "/api/account/userRegister",
+            "/api/test/noAuth/list",
+            "/doc.html",
+            "/doc.html/**",
+            "/doc.html#/**",
+            "/v2/**",
+            "/webjars/**", "/swagger-resources/**", "/v3/api-docs/**",
+    };
+
+    public JwtAuthenticationFilter(AuthenticationManager authenticationManager) {
+        super(authenticationManager);
+    }
+
+    @Resource
+    private MyUserDetailServiceImpl myUserDetailService;
+
+
+    @Override
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
+        String token = request.getHeader("token");
+        log.info("放行URI" + request.getRequestURI());
+        String requestURI = request.getRequestURI();
+        // 如果token是空，url是白名单，放行
+        if (StrUtil.isEmpty(token) || new ArrayList<>(Arrays.asList(URL_WHITELIST)).contains(requestURI)) {
+            chain.doFilter(request, response);
+            return;
+        }
+        CheckResult checkResult = JWTUtils.validateJWT(token);
+        if (!checkResult.isSuccess()) {
+            switch (checkResult.getErrCode()) {
+                case JWTConstant.JWT_ERRCODE_NULL:
+                    throw new BusinessException(ErrorCode.NOT_LOGIN_ERROR, "Token 不存在");
+                case JWTConstant.JWT_ERRCODE_EXPIRE:
+                    throw new BusinessException(ErrorCode.NOT_LOGIN_ERROR, "Token 已过期");
+                case JWTConstant.JWT_ERRCODE_FAIL:
+                    throw new BusinessException(ErrorCode.SYSTEM_ERROR, "Token 认证失败");
+            }
+        }
+        // 解析jwt去获取用户名
+        //Claims claims = checkResult.getClaims();
+        Claims claims = JWTUtils.parseJWT(token);
+        String userAccount = claims.getSubject();
+        log.info("userAccount:" + userAccount);
+
+        SysUser sysUser = sysUserService.getByUserAccount(userAccount);
+
+
+        List<GrantedAuthority> userAuthority = myUserDetailService.getUserAuthority(sysUser.getUserid());
+        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(userAccount, null, userAuthority);
+        SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+        chain.doFilter(request, response);
+    }
+}
+
+```
+
+
+
+### 9. 自定义jwt异常处理
+
+```java
+/**
+ * jwt认证失败处理类
+ */
+@Component
+public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {
+    @Override
+    public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
+        response.setContentType("application/json;charset=UTF-8");
+        ServletOutputStream outputStream = response.getOutputStream();
+        BaseResponse baseResponse = ResultUtils.error(ErrorCode.AUTHENTICATION_FAILED, "认证失败,重新登录");
+        outputStream.write(JSONUtil.toJsonStr(baseResponse).getBytes(StandardCharsets.UTF_8));
+        outputStream.flush();
+        outputStream.close();
+    }
+}
+```
+
+
+
+### 10. 获取用户角色权限
+
+```java
+@Service
+@Slf4j
+public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser>
+        implements SysUserService {
+
+    @Resource
+    private SysRoleServiceImpl sysRoleService;
+
+    @Resource
+    private SysMenuServiceImpl sysMenuService;
+
+    @Override
+    public SysUser getByUserAccount(String userAccount) {
+        QueryWrapper<SysUser> queryWrapper = new QueryWrapper<SysUser>().eq("userAccount", userAccount);
+        SysUser sysUser = this.getOne(queryWrapper);
+        return sysUser;
+    }
+
+    @Override
+    public String getUserAuthorityInfo(Long userId) {
+        StringBuffer authority = new StringBuffer();
+        // 1. 用户id获取所有的权限信息
+        QueryWrapper<SysRole> sysRoleQueryWrapper = new QueryWrapper<>();
+        List<SysRole> roleList = sysRoleService
+                .list(sysRoleQueryWrapper
+                        .inSql("id", "select role_id from sys_user_role where user_id=" + userId));
+        if (!roleList.isEmpty()) {
+            String roleCodeStrs = roleList.stream().map(r -> "ROLE_" + r.getCode()).collect(Collectors.joining(","));
+            authority.append(roleCodeStrs);
+        }
+        // 2. 遍历角色获取所有的菜单权限
+        Set<String> menuCodeSet = new HashSet<>();
+        for (SysRole sysRole : roleList) {
+            List<SysMenu> sysMenuList = sysMenuService
+                    .list(new QueryWrapper<SysMenu>()
+                            .inSql("id", "select menu_id from sys_role_menu where role_id=" + sysRole.getId()));
+            for (SysMenu sysMenu : sysMenuList) {
+                String perms = sysMenu.getPerms();
+                if (StringUtils.isNoneEmpty(perms)) {
+                    menuCodeSet.add(perms);
+                }
+            }
+        }
+
+        if (!menuCodeSet.isEmpty()) {
+            StringBuffer menuCodeStrs = authority.append(",").append(String.join(",", menuCodeSet));
+            authority.append(menuCodeStrs);
+        }
+
+        log.info(authority.toString());
+
+        return authority.toString();
+    }
+}
+```
+
+### 11. 分级菜单
+
