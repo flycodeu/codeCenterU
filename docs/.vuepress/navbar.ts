@@ -118,6 +118,10 @@ export default [
             {
                 text:"数字与数学",
                 link: '/数字与数学/'
+            },
+            {
+                text:"字符串",
+                link: '/字符串/'
             }
         ]
     },
