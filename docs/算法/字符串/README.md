@@ -4,6 +4,6 @@
 > 本站地址：[https://www.flycode.icu](https://www.flycode.icu)
 
 
-[字符串基础](字符串基础题.md)
+[字符串基础](字符串常规)
 
 [反转字符串](反转字符串.md)
