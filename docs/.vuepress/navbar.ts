@@ -122,6 +122,10 @@ export default [
             {
                 text:"字符串",
                 link: '/字符串/'
+            },
+            {
+                text: "滑动窗口",
+                link: '/滑动窗口/'
             }
         ]
     },
