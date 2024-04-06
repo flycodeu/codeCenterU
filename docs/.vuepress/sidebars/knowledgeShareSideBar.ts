@@ -19,7 +19,8 @@ export default [
             "SpringBoot结合七牛云.md",
             "XXL-JOB简单实战.md",
             "前端记住密码功能.md",
-            '路由守卫.md'
+            '路由守卫.md',
+            "wangEditor实现图片上传.md"
         ],
     },
 ];
