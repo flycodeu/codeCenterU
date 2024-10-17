@@ -12,4 +12,4 @@
 
 [yes的Mysql教程](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg3NTc3NjM4Nw==&action=getalbum&album_id=2372043523518300162&scene=173&from_msgid=2247484308&from_itemidx=1&count=3&nolastread=1#wechat_redirect)
 
-
+[三方支付架构](https://mp.weixin.qq.com/s/Z2sNg-VjdmGD5kymZPrrYQ)
