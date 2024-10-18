@@ -24,7 +24,8 @@ export default [
             "微信小程序模板消息.md",
             "SpringBoot自定义实现日志记录.md",
             "BeanCopyUtils复制List对象.md",
-            "MP的getOne查询出多条数据.md"
+            "MP的getOne查询出多条数据.md",
+            "Avue实现表格指定行样式.md"
         ],
     },
 ];

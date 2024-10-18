@@ -52,3 +52,5 @@
 [BeanCopyUtils工具类复制List对象](BeanCopyUtils复制List对象.md)
 
 [MP的getOne查询出多条数据](MP的getOne查询出多条数据.md)
+
+[Avue实现表格指定行样式](Avue实现表格指定行样式.md)
