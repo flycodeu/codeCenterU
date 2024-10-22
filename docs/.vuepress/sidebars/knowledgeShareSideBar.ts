@@ -23,7 +23,7 @@ export default [
             "wangEditor实现图片上传.md",
             "微信小程序模板消息.md",
             "SpringBoot自定义实现日志记录.md",
-            "BeanCopyUtils复制List对象.md",
+            "复制List对象.md",
             "MP的getOne查询出多条数据.md",
             "Avue实现表格指定行样式.md",
             "Uniapp小程序转换为h5网页请求后端.md",
