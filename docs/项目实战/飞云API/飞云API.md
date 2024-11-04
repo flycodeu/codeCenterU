@@ -71,7 +71,7 @@ String music = flyApiClient.wangyiyunRandomMusic();
 
 # 项目地址
 
-后端地址： [https://github.com/flybase1/fly-newApi-backend](https://github.com/flybase1/fly-newApi-backend)
+后端地址： [https://github.com/flycodeu/fly-newApi-backend](https://github.com/flycodeu/fly-newApi-backend)
 
-前端地址：[https://github.com/flybase1/fly-newApi-fontend](https://github.com/flybase1/fly-newApi-fontend)
+前端地址：[https://github.com/flycodeu/fly-newApi-fontend](https://github.com/flycodeu/fly-newApi-fontend)
 
