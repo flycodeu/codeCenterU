@@ -58,3 +58,5 @@
 [Uniapp小程序转换为h5网页请求后端](Uniapp小程序转换为h5网页请求后端.md)
 
 [多数据源使用事物失效](多数据源使用事物失效.md)
+
+[Mysql的EXTRACT函数](Mysql的EXTRACT函数.md)

@@ -27,7 +27,8 @@ export default [
             "MP的getOne查询出多条数据.md",
             "Avue实现表格指定行样式.md",
             "Uniapp小程序转换为h5网页请求后端.md",
-            "多数据源使用事物失效.md"
+            "多数据源使用事物失效.md",
+            "Mysql的EXTRACT函数.md"
         ],
     },
 ];
