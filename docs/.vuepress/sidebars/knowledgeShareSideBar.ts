@@ -28,7 +28,9 @@ export default [
             "Avue实现表格指定行样式.md",
             "Uniapp小程序转换为h5网页请求后端.md",
             "多数据源使用事物失效.md",
-            "Mysql的EXTRACT函数.md"
+            "Mysql的EXTRACT函数.md",
+            "Vertx监听指定端口.md",
+            "自定义序列化和反序列化.md"
         ],
     },
 ];
