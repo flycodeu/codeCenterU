@@ -64,3 +64,7 @@
 [Vertx监听指定端口](Vertx监听指定端口.md)
 
 [自定义序列化和反序列化](自定义序列化和反序列化.md)
+
+[使用oshi监控java运行](使用oshi监控java运行.md)
+
+[查询redis运行信息](查询redis运行信息.md)

@@ -30,7 +30,9 @@ export default [
             "多数据源使用事物失效.md",
             "Mysql的EXTRACT函数.md",
             "Vertx监听指定端口.md",
-            "自定义序列化和反序列化.md"
+            "自定义序列化和反序列化.md",
+            "查询redis运行信息.md",
+            "使用oshi监控java运行.md"
         ],
     },
 ];
