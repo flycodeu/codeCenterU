@@ -68,3 +68,5 @@
 [使用oshi监控java运行](使用oshi监控java运行.md)
 
 [查询redis运行信息](查询redis运行信息.md)
+
+[Vant实现搜索框动态展示数据列表](Vant实现搜索框动态展示数据列表.md)
