@@ -33,7 +33,8 @@ export default [
             "自定义序列化和反序列化.md",
             "查询redis运行信息.md",
             "使用oshi监控java运行.md",
-            "Vant实现搜索框动态展示数据列表.md"
+            "Vant实现搜索框动态展示数据列表.md",
+            "备份Mysql结构和数据.md"
         ],
     },
 ];
