@@ -18,8 +18,8 @@ export default {
     "/知识碎片/": knowledgeShareSideBar,
     "/设计模式/": javaDesignSideBar,
     "/常用框架/": frameworkSideBar,
-    "/常用插件/": commonpluginSideBar,
-    "/AI使用/": aiLearnSideBar,
+    // "/Linux/": commonpluginSideBar,
+    // "/AI使用/": aiLearnSideBar,
     "/个人项目/": projectBar,
     "/": "auto",
 } as SidebarConfig4Multiple;
