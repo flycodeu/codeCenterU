@@ -48,9 +48,6 @@
 
 ![image-20241227105148450](http://cdn.flycode.icu/codeCenterImg/image-20241227105148450.png)
 
-SecretId:AKIDdu78zkcLtFPK0ThhieRDpCQgknbMzxpY SecretKey:eBVbYM1TMKJ86sPm1AIH6oMn6HLKEyVp
-
-
 
 ## 引入依赖
 
