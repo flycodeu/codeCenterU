@@ -77,7 +77,7 @@ cos:
     secretKey :
     region :
     bucket:
-    host:
+    host: 
 ```
 
 - host是当前的存储桶域名，
