@@ -76,3 +76,11 @@
 [后端处理精度丢失问题](后端处理精度丢失问题.md)
 
 [腾讯云COS使用](腾讯云COS使用.md)
+
+[Centos7安装Mysql8](Centos7安装Mysql8.md)
+
+[Centos7安装Nginx](Centos7安装Nginx.md)
+
+[Centos7安装Redis](Centos7安装Redis.md)
+
+[Centos安装Java8](Centos7安装Java8.md)

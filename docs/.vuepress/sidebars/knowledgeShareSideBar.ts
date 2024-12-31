@@ -36,7 +36,11 @@ export default [
             "Vant实现搜索框动态展示数据列表.md",
             "备份Mysql结构和数据.md",
             "后端处理精度丢失问题.md",
-            "腾讯云COS使用.md"
+            "腾讯云COS使用.md",
+            "Centos7安装Mysql8.md",
+            "Centos7安装Java8.md",
+            "Centos7安装Nginx.md",
+            "Centos7安装Redis.md",
         ],
     },
 ];
