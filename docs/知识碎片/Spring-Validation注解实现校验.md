@@ -90,11 +90,11 @@ public class UserController {
 ### 4. 测试发送Json的Post请求
 输入正确情况
 
-![](http://cdn.flycode.icu/codeCenterImg/202312291734858.png)
+![](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202312291734858.png)
 
 输入错误情况
 
-![image-20231229173507587](http://cdn.flycode.icu/codeCenterImg/202312291735660.png)
+![image-20231229173507587](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202312291735660.png)
 
 报错信息
 
@@ -108,11 +108,11 @@ public class UserController {
 
 请求成功
 
-![image-20231229173846806](http://cdn.flycode.icu/codeCenterImg/202312291738881.png)
+![image-20231229173846806](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202312291738881.png)
 
 请求失败,手机号不正确
 
-![image-20231229173914102](http://cdn.flycode.icu/codeCenterImg/202312291739182.png)
+![image-20231229173914102](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202312291739182.png)
 
 报错信息
 
@@ -124,11 +124,11 @@ public class UserController {
 
 发送失败
 
-![image-20231229174822640](http://cdn.flycode.icu/codeCenterImg/202312291748720.png)
+![image-20231229174822640](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202312291748720.png)
 
 但是这个报错就和之前的不一样,抛出的错误不一样
 
-![image-20231229174919913](http://cdn.flycode.icu/codeCenterImg/202312291749980.png)
+![image-20231229174919913](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202312291749980.png)
 
 基本使用就按照上面进行就可以。
 
@@ -149,9 +149,9 @@ Hibernate Validation是其具体实现，并对其进行了一些扩展，添加
 
 这个直接看jar文档即可，寻找对应的maven依赖就可以
 
-![image-20240104180912673](http://cdn.flycode.icu/codeCenterImg/202401041809774.png)
+![image-20240104180912673](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401041809774.png)
 
-![image-20231229175720316](http://cdn.flycode.icu/codeCenterImg/202312291757361.png)
+![image-20231229175720316](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202312291757361.png)
 
 |        注解        | 解释                                                         | 数据类型                                                     | null是否有效 |
 | :----------------: | :----------------------------------------------------------- | ------------------------------------------------------------ | ------------ |
@@ -250,17 +250,17 @@ public class GlobalControllerExceptionHandler {
 
 #### 1. 使用@RequsteBody参数异常
 
-![image-20240107171758680](http://cdn.flycode.icu/codeCenterImg/202401071718793.png)
+![image-20240107171758680](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401071718793.png)
 
 
 
 #### 2. 使用表单方式提交异常
 
-![image-20240107171855194](http://cdn.flycode.icu/codeCenterImg/202401071718264.png)
+![image-20240107171855194](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401071718264.png)
 
 #### 3. 使用@RequsetParam参数异常
 
-![image-20240107172356917](http://cdn.flycode.icu/codeCenterImg/202401071723994.png)
+![image-20240107172356917](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401071723994.png)
 
 
 
@@ -272,7 +272,7 @@ public class GlobalControllerExceptionHandler {
 
 首先我们先看一下如何自定义注解，仿照源码来进行设计。
 
-![image-20240107172820802](http://cdn.flycode.icu/codeCenterImg/202401071728887.png)
+![image-20240107172820802](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401071728887.png)
 
 里面几个比较重要的设计如下
 
@@ -393,7 +393,7 @@ public interface UpdateUserGroup {
 
 如果不指定组，那么就是采用默认的组，源码解释如下。
 
-![image-20240108172319993](http://cdn.flycode.icu/codeCenterImg/202401081723104.png)
+![image-20240108172319993](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401081723104.png)
 
 解释如下：
 
@@ -449,25 +449,25 @@ public class GroupUserController {
 
 1. 首先我们先测试添加user里面输入了值
 
-![image-20240108173156991](http://cdn.flycode.icu/codeCenterImg/202401081731093.png)
+![image-20240108173156991](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401081731093.png)
 
 这边由于上面编写了对应的异常处理，所以很明显不能通过
 
 2. addUser里面不输入userId
 
-![image-20240108173307114](http://cdn.flycode.icu/codeCenterImg/202401081733183.png)
+![image-20240108173307114](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401081733183.png)
 
 能够正常的通过校验
 
 3. 对updateUser不指定userId
 
-![image-20240108173349018](http://cdn.flycode.icu/codeCenterImg/202401081733090.png)
+![image-20240108173349018](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401081733090.png)
 
 
 
 4. 对updateUser指定userId
 
-![image-20240108173428812](http://cdn.flycode.icu/codeCenterImg/202401081734883.png)
+![image-20240108173428812](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401081734883.png)
 
 上面两个在对应的场景下，分组校验都能进行
 
@@ -521,11 +521,11 @@ public class NestUserController {
 
 1. 不输入对应的userInfo信息
 
-![image-20240108174723512](http://cdn.flycode.icu/codeCenterImg/202401081747596.png)
+![image-20240108174723512](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401081747596.png)
 
 2. 输入userInfo，不输入password
 
-![image-20240108174753710](http://cdn.flycode.icu/codeCenterImg/202401081747787.png)
+![image-20240108174753710](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401081747787.png)
 
 
 
@@ -543,7 +543,7 @@ public void saveUser2(@Validated @RequestBody List<User> users){
 }
 ```
 
-![image-20240108191715877](http://cdn.flycode.icu/codeCenterImg/202401081917968.png)
+![image-20240108191715877](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401081917968.png)
 
 可以看到并没进行校验，所以使用这种方式是肯定不行的。
 
@@ -563,7 +563,7 @@ public class NestUserController {
 }
 ```
 
-![image-20240108175846817](http://cdn.flycode.icu/codeCenterImg/202401081758900.png)
+![image-20240108175846817](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401081758900.png)
 
 但是这样缺点就是无法使用分组校验，因为分组校验里面需要@Validated指定分组，但是现在是使用的@Valid
 
@@ -587,7 +587,7 @@ public class ValidList<E> implements List<E> {
 
 `@Delegate`是Lombok里面的一个注解，如果不使用的话，需要重写其他的方法，但是这边@Delegate已经废弃了，而且比较难用，这边使用的话会有个报错，所以还是需要自己重写对应的方法
 
-![image-20240108190924330](http://cdn.flycode.icu/codeCenterImg/202401081909411.png)
+![image-20240108190924330](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401081909411.png)
 
 
 
@@ -725,6 +725,6 @@ public void saveUser2(@Validated @RequestBody @NotEmpty(message = "集合不能�
 }
 ```
 
-![image-20240108191758161](http://cdn.flycode.icu/codeCenterImg/202401081917253.png)
+![image-20240108191758161](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401081917253.png)
 
 校验正常

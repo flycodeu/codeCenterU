@@ -33,11 +33,11 @@
 
 第一步：创建成功后，我们能够看到自己的当前项目groupId，工件id以及相应的版本号，这几个配置就是之后打包，别人使用的依赖
 
-![image-20240114151537618](http://cdn.flycode.icu/codeCenterImg/202401141515657.png)
+![image-20240114151537618](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401141515657.png)
 
 第二步：删除build配置
 
-![image-20240114144225644](http://cdn.flycode.icu/codeCenterImg/202401141442689.png)
+![image-20240114144225644](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401141442689.png)
 
 因为我们目前是生成依赖包，而不是打包成jar，需要删掉，否则会报错
 
@@ -45,7 +45,7 @@
 
 因为我们是想让别人来使用的我们的starter，就不需要原本的配置启动类了。
 
-![image-20240114144505926](http://cdn.flycode.icu/codeCenterImg/202401141445967.png)
+![image-20240114144505926](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401141445967.png)
 
 ### 4. 编写配置文件
 
@@ -106,11 +106,11 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration= com.fly.flydemos
 
 点击install安装Starter到本地依赖
 
-![image-20240114151144935](http://cdn.flycode.icu/codeCenterImg/202401141511978.png)
+![image-20240114151144935](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401141511978.png)
 
 安装成功后可以在本地看到对应的依赖，名称就是一开始自己定义的name
 
-![image-20240114151303055](http://cdn.flycode.icu/codeCenterImg/202401141513098.png)
+![image-20240114151303055](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401141513098.png)
 
 当然，这里也可以发布到Maven的中央仓库，让别人也能引入调用，具体步骤不多说，网上都有详细教程。
 
@@ -128,15 +128,15 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration= com.fly.flydemos
 
 前往配置文件yml或者其他的配置文件
 
-![image-20240114151620269](http://cdn.flycode.icu/codeCenterImg/202401141516320.png)
+![image-20240114151620269](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401141516320.png)
 
 可以看到已经识别除了对应的配置信息
 
 ### 8. 编写测试
 
-![image-20240114152441831](http://cdn.flycode.icu/codeCenterImg/202401141524889.png)
+![image-20240114152441831](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401141524889.png)
 
-![image-20240114152454723](http://cdn.flycode.icu/codeCenterImg/202401141524767.png)
+![image-20240114152454723](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401141524767.png)
 
 很明显，输出了当前的使用者以及传入的配置参数信息
 

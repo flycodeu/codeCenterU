@@ -27,11 +27,11 @@ spring:
 ## 3. QQ邮箱授权码
 
 在设置，账号里面，开启服务
-![sbse-1](http://cdn.flycode.icu/codeCenterImg/sbse-1.png)
+![sbse-1](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/sbse-1.png)
 生成授权码
-![sbse-2](http://cdn.flycode.icu/codeCenterImg/sbse-2.png)
+![sbse-2](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/sbse-2.png)
 发送信息
-![sbse-3](http://cdn.flycode.icu/codeCenterImg/sbse-3.png)
+![sbse-3](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/sbse-3.png)
 生成授权码（妥善保管)
 
 ## 4. 发送简单邮件service

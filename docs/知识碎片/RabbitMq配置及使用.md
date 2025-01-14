@@ -11,14 +11,14 @@ erlang安装https://www.erlang.org/patches/otp-25.3.2
 
 ## 3. windows启动命令
 到解压的rabbitMqServer里面的sbin命令行输入rabbitmq-plugins.bat enable rabbitmq_management
-![rmpzsy-0](http://cdn.flycode.icu/codeCenterImg/rmpzsy-0.png)
+![rmpzsy-0](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/rmpzsy-0.png)
 这个启动后会占用两个端口，5672是运行端口，15672是webUI端口，写端口的时候需要注意。
 
 ## 4. 登录控制台界面
 http://localhost:15672/
 默认账号密码都是guest，如果是上线需要自己更改密码，账号赋予权限，这里仅作为单机本地部署。
 官方设置https://www.rabbitmq.com/access-control.html
-![rmpzsy-1](http://cdn.flycode.icu/codeCenterImg/rmpzsy-1.png)
+![rmpzsy-1](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/rmpzsy-1.png)
 
 
 ## 5. java版本快速入门，一对一,原生方式
@@ -60,7 +60,7 @@ public class QuickStartMq {
     }
 }
 ```
-![rmpzsy-2](http://cdn.flycode.icu/codeCenterImg/rmpzsy-2.png)
+![rmpzsy-2](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/rmpzsy-2.png)
 其中queueDeclare申明队列的时候有5个参数
 queue: 队列名称
 durable: 消息队列重启后，消息是否丢失
@@ -96,7 +96,7 @@ public class QuickStartConsumerMq {
     }
 }
 ```
-![rmpzsy-3](http://cdn.flycode.icu/codeCenterImg/rmpzsy-3.png)
+![rmpzsy-3](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/rmpzsy-3.png)
 
 
 ## 6. 快速入门，多个消费者
@@ -191,7 +191,7 @@ public class QuickStartMoreConsumerMq {
 ## 7. fanout交换机
 特点：会将消息转发给所有绑定到该交换机的消息队列上面去
 https://www.rabbitmq.com/tutorials/tutorial-three-java.html
-![rmpzsy-5](http://cdn.flycode.icu/codeCenterImg/rmpzsy-5.png)
+![rmpzsy-5](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/rmpzsy-5.png)
 默认使用
 
 ### 7.1 生产者
@@ -283,12 +283,12 @@ public class FanoutConsumer {
 ```
 
 消费者接收信息
-![rmpzsy-6](http://cdn.flycode.icu/codeCenterImg/rmpzsy-6.png)
+![rmpzsy-6](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/rmpzsy-6.png)
 只有绑定交换机的队列才能接收信息
 
 ## 8. Direct交换机
 根据相应的路由键将消息转发到特定的队列
-![rmpzsy-7](http://cdn.flycode.icu/codeCenterImg/rmpzsy-7.png)
+![rmpzsy-7](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/rmpzsy-7.png)
 用于日志系统
 
 ### 8.1 生产者
@@ -371,14 +371,14 @@ public class DirectConsumer {
 
 ```
 
-![rmpzsy-8](http://cdn.flycode.icu/codeCenterImg/rmpzsy-8.png)
-![rmpzsy-9](http://cdn.flycode.icu/codeCenterImg/rmpzsy-9.png)
+![rmpzsy-8](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/rmpzsy-8.png)
+![rmpzsy-9](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/rmpzsy-9.png)
 里面只存在AA，BB路由键，没有CC路由键，所以接收不到信息。
 
 
 ## 9. Topic交换机
 topic交换机解决了Direct只能转发到固定的路由键，里面加入了模糊匹配队列，*一个单词 a.orange,b.orange       # 0个或多个单词     lazy.helo lazy.hello2
-![rmpzsy-10](http://cdn.flycode.icu/codeCenterImg/rmpzsy-10.png)
+![rmpzsy-10](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/rmpzsy-10.png)
 https://www.rabbitmq.com/tutorials/tutorial-five-java.html
 
 ### 9.1 生产者
@@ -482,8 +482,8 @@ public class TopicConsumer {
 
 ```
 
-![rmpzsy-11](http://cdn.flycode.icu/codeCenterImg/rmpzsy-11.png)
-![rmpzsy-12](http://cdn.flycode.icu/codeCenterImg/rmpzsy-12.png)
+![rmpzsy-11](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/rmpzsy-11.png)
+![rmpzsy-12](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/rmpzsy-12.png)
 只有产品和后端收到了，前端没有收到消息
 
 

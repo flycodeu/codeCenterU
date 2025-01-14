@@ -47,4 +47,4 @@
 
 ## 3. 运行截图
 
-![image-20241105095441656](http://cdn.flycode.icu/codeCenterImg/image-20241105095441656.png)
+![image-20241105095441656](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20241105095441656.png)

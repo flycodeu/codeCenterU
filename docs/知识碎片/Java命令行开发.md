@@ -98,7 +98,7 @@ public class ASCIIArt implements Runnable {
 ```
 ## 3. 运行
 
-![image-20231230114729912](http://cdn.flycode.icu/codeCenterImg/202312301147048.png)
+![image-20231230114729912](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202312301147048.png)
 
 因为这里我们没有给对应的输入，所以输出的是默认值，这里有两种方法可以模拟命令行
 
@@ -106,9 +106,9 @@ public class ASCIIArt implements Runnable {
 
 需要点击当前文件的配置
 
-![image-20231230114953715](http://cdn.flycode.icu/codeCenterImg/202312301149784.png)
+![image-20231230114953715](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202312301149784.png)
 
-![image-20231230115112863](http://cdn.flycode.icu/codeCenterImg/202312301151955.png)
+![image-20231230115112863](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202312301151955.png)
 
 在程序实参里面输入对应的命令，例如  -s 20 test，重新运行就可以了。
 
@@ -126,7 +126,7 @@ public class ASCIIArt implements Runnable {
 
 ## 4.详细讲解
 
-![image-20231230120126939](http://cdn.flycode.icu/codeCenterImg/202312301201014.png)
+![image-20231230120126939](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202312301201014.png)
 
 以上内容官方是分成了8个部分
 
@@ -151,7 +151,7 @@ public class ASCIIArt implements Runnable {
 
 里面可以指定对应的名称，版本，以及对应是否需要开启help文档，开启后可以通过`--help`获取所有的参数，选项列表，这个功能在很多命令行里面都有，比如git等等，可以帮助用户了解更多内容。
 
-![image-20231230132745363](http://cdn.flycode.icu/codeCenterImg/202312301327416.png)
+![image-20231230132745363](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202312301327416.png)
 
 格式 `ASCIIArt -- help`。
 
@@ -165,11 +165,11 @@ public class ASCIIArt implements Runnable {
 
 这个一般用于解析选项，用户可以输入`-s`也可以输入`--font-size`。 可以指定对应的参数的英文名，描述信息，是否必须填入，是否有默认值等等。这个Option是支持多值选项，只需要将对象属性设置为数组类型即可。
 
-![image-20231230133245415](http://cdn.flycode.icu/codeCenterImg/202312301332470.png)
+![image-20231230133245415](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202312301332470.png)
 
 所有的选项如下
 
-![image-20231230132644954](http://cdn.flycode.icu/codeCenterImg/202312301326013.png)
+![image-20231230132644954](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202312301326013.png)
 
 格式 `ASCIIArt -s 20` 
 
@@ -184,7 +184,7 @@ public class ASCIIArt implements Runnable {
 
 这个就是对应的参数值，用于解析命令输入。
 
-![image-20231230133423903](http://cdn.flycode.icu/codeCenterImg/202312301334961.png)
+![image-20231230133423903](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202312301334961.png)
 
 格式`ASCIIArt xxx`。
 
@@ -223,7 +223,7 @@ public class LoginDemo implements Callable<Integer> {
 
 这边我是直接将部分参数，选项写入里面去的，所以只需要命令行输入密码就可以。
 
-![image-20231230135116188](http://cdn.flycode.icu/codeCenterImg/202312301351254.png)
+![image-20231230135116188](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202312301351254.png)
 
 可以看出已经有了交互式内容
 
@@ -243,11 +243,11 @@ public class LoginDemo implements Callable<Integer> {
     }
 ```
 
-![image-20231230135421915](http://cdn.flycode.icu/codeCenterImg/202312301354995.png)
+![image-20231230135421915](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202312301354995.png)
 
 但是运行的是否并不会走下一个交互命令，我里面加了`required = true`所以直接报错，不然就是checkPassword为空，也就是说不会进行交互。但是我将checkpassword的交互命令写入，就能继续执行了。
 
-![image-20231230135721205](http://cdn.flycode.icu/codeCenterImg/202312301357274.png)
+![image-20231230135721205](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202312301357274.png)
 
 很显然这里是存在一点问题的，如果这个命令参数是强制需要输入的，那么用户必须填，但是如果不是强制输入的，那么用户可以不填，所以这边需要分成两种情况。
 
@@ -263,7 +263,7 @@ public class LoginDemo implements Callable<Integer> {
 
 上面就是模拟长串命令，但是这里存在一点问题，会出现参数不匹配的问题。
 
-![image-20231230140615068](http://cdn.flycode.icu/codeCenterImg/202312301406126.png)
+![image-20231230140615068](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202312301406126.png)
 
 因为是给完整命令填充参数，默认的参数个数是0，需要修改arity的参数范围0..1表示0-1个参数都是可以的，既能满足交互式，也能满足填充数据方式。
 
@@ -278,7 +278,7 @@ private String password;
 
 现在我只需要输入检验密码，password已经在命令行里面设置好了
 
-![image-20231230141349891](http://cdn.flycode.icu/codeCenterImg/202312301413968.png)
+![image-20231230141349891](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202312301413968.png)
 
 #### 2. 强制交互式
 
@@ -344,7 +344,7 @@ public static void main(String[] args) throws IllegalAccessException {
 
 上面我没输入密码，意味着密码需要用户输入
 
-![image-20231230151301228](http://cdn.flycode.icu/codeCenterImg/202312301513314.png)
+![image-20231230151301228](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202312301513314.png)
 
 总体上能够实现功能。
 

@@ -225,7 +225,7 @@ qiniu:
 写yml的主要原因是读取比较方便，也可以自己写配置类进行读取
 其中ak,sk在七牛云的个人中心的密钥管理可以获取(https://portal.qiniu.com/developer/user/key)里面。
 bucket是自己空间的名字,可以在七牛云的对象存储的空间管理里面看见，例如我的是flybase
-![sbjhqny-0](http://cdn.flycode.icu/codeCenterImg/sbjhqny-0.png)
+![sbjhqny-0](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/sbjhqny-0.png)
 这里面需要注意下存储区域，等一会需要用到。
 里面的url是自己的域名地址，以http或者https形式。
 
@@ -434,7 +434,7 @@ public class ImageController {
 
 ### 3.6 测试
 需要注意文件上传相应的参数是在body里面选择文件，上传成功会返回对应的url，可以将这个url进行页面展示。
-![sbjhqny-1](http://cdn.flycode.icu/codeCenterImg/sbjhqny-1.png)
+![sbjhqny-1](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/sbjhqny-1.png)
 
 
 ### 3.7 vue3

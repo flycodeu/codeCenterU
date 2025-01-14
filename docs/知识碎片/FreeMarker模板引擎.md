@@ -92,7 +92,7 @@ FreeMarker主要优点是不会和其他框架绑定，是个Java项目就可以
 
 2. 创建ftl文件
 
-![image-20231229113338197](http://cdn.flycode.icu/codeCenterImg/202312291133326.png)
+![image-20231229113338197](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com/codeCenterImg/202312291133326.png)
 
 写入如下代码，看起来和Thymeleaf一样，语法这一块就没什么太大好说的。例如插槽${},#list，直接看官方文档就好
 
@@ -186,9 +186,9 @@ FreeMarker主要优点是不会和其他框架绑定，是个Java项目就可以
 
 4. 运行成功
 
-![image-20231229120522799](http://cdn.flycode.icu/codeCenterImg/202312291205903.png)
+![image-20231229120522799](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202312291205903.png)
 
-![image-20231229120540860](http://cdn.flycode.icu/codeCenterImg/202312291205951.png)
+![image-20231229120540860](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202312291205951.png)
 
 5. 存在问题，很显然上面的2,023不是我们需要的，我们需要的是2023，这个直接看官方文档即可，修改对应的number格式
 
@@ -268,7 +268,7 @@ ${userName}
 
 1. 创建实体类
 
-![image-20231229144721488](http://cdn.flycode.icu/codeCenterImg/202312291447591.png)
+![image-20231229144721488](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202312291447591.png)
 
 2. 创建MainTemplate对应的ftl文件
 
@@ -333,7 +333,7 @@ public class MainTemplate {
 
 4. 生成文件
 
-![image-20231229145450760](http://cdn.flycode.icu/codeCenterImg/202312291454866.png)
+![image-20231229145450760](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202312291454866.png)
 
 很明显添加了作者，移除了循环，修改了输出，基本上完成对应的要求
 

@@ -140,11 +140,11 @@ public int[] twoSum(int[] nums, int target) {
 
 我们需要重新思考下这三个数有什么规律，`num[i]+num[j]+num[k] == 0`，最少是有一个元素小于0，最少是有一个元素大于0，如果能够确定这两个元素的位置，就相对简单。但是此时数组是无规律，所以我们先进行排序。
 
-![image-20240131100550521](http://cdn.flycode.icu/codeCenterImg/202401311005616.png)
+![image-20240131100550521](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401311005616.png)
 
 首先我们需要先遍历这个数组，定位第一个元素位置，下标我们记为`i`，我们还需要使用两个指针来记录其余两个元素的位置`left`，`right`,最终就变成了`num[i]+num[left]+num[right]=0`，我们要如何定位`left`和`right`，因为下标是不可能重复的，所以`left`先定位到`i+1`位置，`right`先定位到最后一个元素的位置。
 
-![image-20240131100911651](http://cdn.flycode.icu/codeCenterImg/202401311009698.png)
+![image-20240131100911651](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401311009698.png)
 
 接下来就是如何操控这两个指针移动。在一次遍历中，`left`会向右移动,`right`会向左移动，但是**一定不会出现`left==right`的情况**，如果一样的话，最终就是`[i,left,left]`，不符合题意。
 
@@ -166,11 +166,11 @@ public int[] twoSum(int[] nums, int target) {
 
 如`[-1,-1,-1,2]`里面会有三种`[-1,-1,2]`的情况，我们只需要一个，如何排除?
 
-![image-20240131102625660](http://cdn.flycode.icu/codeCenterImg/202401311026710.png)
+![image-20240131102625660](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401311026710.png)
 
 首先针对`i`，有两种判断情况`nums[i] == nums[i+1]`和`nums[i] == nums[i-1]`，如何选择?
 
-![image-20240131102755918](http://cdn.flycode.icu/codeCenterImg/202401311027965.png)
+![image-20240131102755918](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401311027965.png)
 
 如上图所示，我们已经有了一个数据`[-1,-1,2]`，如果是`nums[i] == nums[i+1]`就意味着这个三元组里面的元素不能重复，里面不能包含例如`[-1,-1,xxx]`的情况，但是我们**需要的是不能有重复的三元组，而不是三元组里面重复的元素**，所以应该使用`i`和`i-1`。
 
@@ -261,7 +261,7 @@ public List<List<Integer>> threeSum(int[] nums) {
 
 和上面的方法类似，只不过多了一个循环。
 
-![image-20240131113640648](http://cdn.flycode.icu/codeCenterImg/202401311136703.png)
+![image-20240131113640648](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401311136703.png)
 
 ```java
 public List<List<Integer>> fourSum(int[] nums, int target) {
@@ -306,7 +306,7 @@ public List<List<Integer>> fourSum(int[] nums, int target) {
 
 里面需要注意第一步排除不可能的情况，如果**这个数组里面的每一个值都是比`target`大，那么就没必要进行下一步操作**，这一步一定要要处理，不然有一个案例一定会失败。
 
-![image-20240131111434779](http://cdn.flycode.icu/codeCenterImg/202401311114839.png)
+![image-20240131111434779](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401311114839.png)
 
 
 

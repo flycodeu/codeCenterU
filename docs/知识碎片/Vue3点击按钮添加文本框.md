@@ -35,7 +35,7 @@ const handleSubmit = () => {
 };
 ```
 
-![image-20240323165822201](http://cdn.flycode.icu/codeCenterImg/image-20240323165822201.png)
+![image-20240323165822201](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20240323165822201.png)
 
 此时传递的是Json数组
 

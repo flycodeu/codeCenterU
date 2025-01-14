@@ -19,5 +19,5 @@
 
 ### STL优点
 
-![image-20240229165014663](http://cdn.flycode.icu/codeCenterImg/image-20240229165014663.png)
+![image-20240229165014663](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20240229165014663.png)
 

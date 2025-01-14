@@ -59,7 +59,7 @@ private FlyApiClient flyApiClient;
 ## API接口示例
 
 网易云随机音乐
-![fyapizs-0](http://cdn.flycode.icu/codeCenterImg/202401141555941.png)
+![fyapizs-0](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401141555941.png)
 
 ```java
 String music = flyApiClient.wangyiyunRandomMusic();

@@ -88,9 +88,9 @@ crontab -e
 
 ## 使用Navicat定时备份任务
 
-![image-20241225143951093](http://cdn.flycode.icu/codeCenterImg/image-20241225143951093.png)
+![image-20241225143951093](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20241225143951093.png)
 
-![image-20241225143752921](http://cdn.flycode.icu/codeCenterImg/image-20241225143752921.png)
+![image-20241225143752921](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20241225143752921.png)
 
 
 ## Windows定时备份数据

@@ -28,7 +28,7 @@
 
 需要找到`doc/db/tables_xxl_job.sql`并且执行对应的sql语句
 
-![image-20240129164930670](http://cdn.flycode.icu/codeCenterImg/202401291655137.png)
+![image-20240129164930670](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401291655137.png)
 
 3. 修改`xxl-job-admin`里面的`application`的数据库配置
 
@@ -36,13 +36,13 @@
 
 访问`http://localhost:8080/xxl-job-admin`输入账号`admin`密码`123456`即可进入
 
-![image-20240129165153062](http://cdn.flycode.icu/codeCenterImg/202401291655117.png)
+![image-20240129165153062](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401291655117.png)
 
 可以在任务管理里面新增相应的任务管理，默认的是有`测试任务`，这个是已经写好的案例，可以启动`samples`里面的`springboot`项目，即可运行。
 
 执行任务前必须在执行器管理里面查看机器是否在线，如果不在线就无法调用ren'wu
 
-![image-20240129171419526](http://cdn.flycode.icu/codeCenterImg/202401291714616.png)
+![image-20240129171419526](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401291714616.png)
 
 ### 入门案例步骤解析
 
@@ -162,13 +162,13 @@ public class MyJobHandler {
 
 5. 新建任务管理配置
 
-![image-20240129170257354](http://cdn.flycode.icu/codeCenterImg/202401291702450.png)
+![image-20240129170257354](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401291702450.png)
 
 必须要注意`JobHandler`必须和注解`@XxlJob`里面一致，然后点击操作执行，即可在控制台输出，如果希望在界面展示，必须使用`XxlJobHelper.log`
 
 6. 查看运行报表
 
-![image-20240129170505890](http://cdn.flycode.icu/codeCenterImg/202401291705988.png)
+![image-20240129170505890](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401291705988.png)
 
 
 
@@ -178,7 +178,7 @@ public class MyJobHandler {
 
 ### 核心原理
 
-![image-20240129170903403](http://cdn.flycode.icu/codeCenterImg/202401291709538.png)
+![image-20240129170903403](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/202401291709538.png)
 
 我们可以看到`XXL-JOB`可以看作两个部分，一个是调度中心，一个是执行器。
 

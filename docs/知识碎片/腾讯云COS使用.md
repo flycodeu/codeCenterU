@@ -8,7 +8,7 @@
 
 ### 配置存储桶
 
-![image-20241227103517564](http://cdn.flycode.icu/codeCenterImg/image-20241227103517564.png)
+![image-20241227103517564](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20241227103517564.png)
 
 - 所属地域：自己需要服务用户或者自己所在地区的地址
 - 名称：编写存储桶名称
@@ -17,19 +17,19 @@
   - 共有读私有写：其他人都可以下载文件，但是只有管理员才可以上传文件
   - 公有读写：所有人都可以上传文件和下载文件，非常不安全，容易出现盗刷
 
-![image-20241227103613258](http://cdn.flycode.icu/codeCenterImg/image-20241227103613258.png)
+![image-20241227103613258](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20241227103613258.png)
 
 其余的配置可以按需配置，都是需要计费的。
 
 创建成功可以在控制台存储桶列表查看，进入可以进行相应的文件上传和文件管理
 
-![image-20241227103917019](http://cdn.flycode.icu/codeCenterImg/image-20241227103917019.png)
+![image-20241227103917019](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20241227103917019.png)
 
 上传文件可以查看当前文件的大小
 
-![image-20241227104231785](http://cdn.flycode.icu/codeCenterImg/image-20241227104231785.png)
+![image-20241227104231785](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20241227104231785.png)
 
-![image-20241227104334082](http://cdn.flycode.icu/codeCenterImg/image-20241227104334082.png)
+![image-20241227104334082](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20241227104334082.png)
 
 里面的对象不能直接暴露给其他人
 
@@ -42,11 +42,11 @@
 
 进入访问管理
 
-![image-20241227105037471](http://cdn.flycode.icu/codeCenterImg/image-20241227105037471.png)
+![image-20241227105037471](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20241227105037471.png)
 
 获取自己的密钥
 
-![image-20241227105148450](http://cdn.flycode.icu/codeCenterImg/image-20241227105148450.png)
+![image-20241227105148450](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20241227105148450.png)
 
 
 ## 引入依赖
@@ -87,11 +87,11 @@ cos:
 
 一般不建议直接在yml中写入这些密钥信息，上传github等平台容易造成泄露，建议创建一个application-local.yml存储本地信息，这个文件不会上传，可以在.gitignore中排除这个文件
 
-![image-20241227105917440](http://cdn.flycode.icu/codeCenterImg/image-20241227105917440.png)
+![image-20241227105917440](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20241227105917440.png)
 
-点击配置![image-20241227110734367](http://cdn.flycode.icu/codeCenterImg/image-20241227110734367.png)
+点击配置![image-20241227110734367](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20241227110734367.png)
 
-输入有效文件![image-20241227110751652](http://cdn.flycode.icu/codeCenterImg/image-20241227110751652.png)
+输入有效文件![image-20241227110751652](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20241227110751652.png)
 
 编写配置
 

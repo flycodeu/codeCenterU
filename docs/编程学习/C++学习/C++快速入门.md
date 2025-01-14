@@ -28,41 +28,41 @@ int main() {
 
 
 
-![image-20240209174001674](http://cdn.flycode.icu/codeCenterImg/image-20240209174001674.png)
+![image-20240209174001674](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20240209174001674.png)
 
 但是可以看出目前输出了很多无用的东西，我们可以调整输出格式，工具->调式->调式停止时自动关闭控制台
 
-![image-20240209174151019](http://cdn.flycode.icu/codeCenterImg/image-20240209174151019.png)
+![image-20240209174151019](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20240209174151019.png)
 
 但是这样运行后一闪而过，我们看不到对应的输出
 
 1. 使用系统底层命令,`system("pause")`，不推荐
 
-![image-20240209174508774](http://cdn.flycode.icu/codeCenterImg/image-20240209174508774.png)
+![image-20240209174508774](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20240209174508774.png)
 
 2. 使用`cin.get()`等待键盘输入
 
-![image-20240209174621912](http://cdn.flycode.icu/codeCenterImg/image-20240209174621912.png)
+![image-20240209174621912](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20240209174621912.png)
 
 
 
 ##  C++编译运行
 
-![image-20240209174711265](http://cdn.flycode.icu/codeCenterImg/image-20240209174711265.png)
+![image-20240209174711265](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20240209174711265.png)
 
 
 
 1. 编译.cpp文件
 
-![image-20240209175018364](http://cdn.flycode.icu/codeCenterImg/image-20240209175018364.png)
+![image-20240209175018364](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20240209175018364.png)
 
 2. 点击项目生成exe文件
 
-![image-20240209175105117](http://cdn.flycode.icu/codeCenterImg/image-20240209175105117.png)
+![image-20240209175105117](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20240209175105117.png)
 
 3. 文件地址，在对应的文件夹里面可以看见exe运行程序
 
-![image-20240209175220969](http://cdn.flycode.icu/codeCenterImg/image-20240209175220969.png)
+![image-20240209175220969](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20240209175220969.png)
 
 
 
@@ -128,7 +128,7 @@ int main() {
 
 我们可以在其他的文件里面定义好这个`welcome`,然后引入当前文件。
 
-![image-20240209180436236](http://cdn.flycode.icu/codeCenterImg/image-20240209180436236.png)
+![image-20240209180436236](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20240209180436236.png)
 
 
 
@@ -181,7 +181,7 @@ int main() {
 
 通过`::`就是获取全局变量
 
-![image-20240209202006113](http://cdn.flycode.icu/codeCenterImg/image-20240209202006113.png)
+![image-20240209202006113](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20240209202006113.png)
 
 
 
@@ -240,7 +240,7 @@ int main() {
 }
 ```
 
-![image-20240210162400367](http://cdn.flycode.icu/codeCenterImg/image-20240210162400367.png)
+![image-20240210162400367](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20240210162400367.png)
 
 
 
@@ -260,7 +260,7 @@ int main() {
 }
 ```
 
-![image-20240210163246414](http://cdn.flycode.icu/codeCenterImg/image-20240210163246414.png)
+![image-20240210163246414](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20240210163246414.png)
 
 如果超出了固定的最大范围，值就会从最小值开始，但是使用`unsigned`表示后，范围就扩大了，第一位就不是表示正负了，而是表示值
 
@@ -315,7 +315,7 @@ double pi = 3.14e-23;
 
 2. 浮点型
 
-![image-20240210170711916](http://cdn.flycode.icu/codeCenterImg/image-20240210170711916.png)
+![image-20240210170711916](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20240210170711916.png)
 
 ```C++
 // 整型
@@ -338,7 +338,7 @@ double pi = 3.14e-23;
 
 4. 转义类型
 
-![image-20240210171001805](http://cdn.flycode.icu/codeCenterImg/image-20240210171001805.png)
+![image-20240210171001805](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20240210171001805.png)
 
 4. 布尔类型
 
@@ -346,9 +346,9 @@ double pi = 3.14e-23;
 
 ## 类型转换
 
-![image-20240210171438303](http://cdn.flycode.icu/codeCenterImg/image-20240210171438303.png)
+![image-20240210171438303](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20240210171438303.png)
 
-![image-20240210174640385](http://cdn.flycode.icu/codeCenterImg/image-20240210174640385.png)
+![image-20240210174640385](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20240210174640385.png)
 
 类型转换注意事项
 
@@ -412,7 +412,7 @@ cin里面有四个方法
 
 如果不满足这个第一次的int整数，而是字符串，此时的标志就是fail，并且此时会阻塞后续的命令执行
 
-![image-20240219164853258](http://cdn.flycode.icu/codeCenterImg/image-20240219164853258.png)
+![image-20240219164853258](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20240219164853258.png)
 
 引入cin.clear()可以清除当前状态，但是依然阻塞后面的命令执行，因为缓冲区还是会影响后面的执行
 
@@ -426,7 +426,7 @@ cin里面有四个方法
 	cout << "good = " << cin.good() << "\t fail= " << cin.fail() << endl;
 ```
 
-![image-20240219165045793](http://cdn.flycode.icu/codeCenterImg/image-20240219165045793.png)
+![image-20240219165045793](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20240219165045793.png)
 
 可以使用ignore来忽略一整行
 
@@ -434,7 +434,7 @@ cin里面有四个方法
 	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 ```
 
-![image-20240219165521935](http://cdn.flycode.icu/codeCenterImg/image-20240219165521935.png)
+![image-20240219165521935](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20240219165521935.png)
 
 ## 宏定义
 
@@ -572,7 +572,7 @@ std::cout << num << std::endl;
 
 ## 位运算
 
-![image-20240219173720472](http://cdn.flycode.icu/codeCenterImg/image-20240219173720472.png)
+![image-20240219173720472](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20240219173720472.png)
 
 负数使用位移是向下取整的，例如  -3.12 会转换成 -4
 

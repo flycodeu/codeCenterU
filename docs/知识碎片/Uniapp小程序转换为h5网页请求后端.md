@@ -6,7 +6,7 @@
 
 ## 1. 找到对应的mainfest.json的源码视图
 
-![image-20241022104129829](http://cdn.flycode.icu/codeCenterImg/image-20241022104129829.png)
+![image-20241022104129829](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/image-20241022104129829.png)
 
 
 

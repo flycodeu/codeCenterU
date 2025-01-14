@@ -19,8 +19,8 @@
 
 ## 1. 爬取bing的图片
 第一步先找到bing的每个图片对应的标签
-![pqtp-1](http://cdn.flycode.icu/codeCenterImg/pqtp-1.png)
-![pqtp-2](http://cdn.flycode.icu/codeCenterImg/pqtp-2.png)
+![pqtp-1](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/pqtp-1.png)
+![pqtp-2](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/pqtp-2.png)
 例如图片的标签是 iuscp isv
 图片标题的标签是 inflnk
 核心就是先找到响应标签
@@ -108,7 +108,7 @@ public class PictureController {
 
 
 ## 2. 爬取豆瓣的热门电影
-![pqtp-4](http://cdn.flycode.icu/codeCenterImg/pqtp-4.png)
+![pqtp-4](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/pqtp-4.png)
 首先先打开F12找到每个电影所在的区域，可以看到是在li元素标签下面ui-slide-item s，所以选择的标签就是li.ui-slide-item,然后再从element里面去出对应的标签，例如data-title，标题
 ```java
   String url = "https://movie.douban.com/";
@@ -156,11 +156,11 @@ public class PictureController {
 
 ## 3. 豆瓣最受关注
 先找到整个布局的部分，list-col2，里面存储着相应的元素标签
-![pqtp-5](http://cdn.flycode.icu/codeCenterImg/pqtp-5.png)
+![pqtp-5](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/pqtp-5.png)
 所以document的select标签就是ul.list-col2 li，意思是选择ul里面标签list-col2，然后选择里面的li
 li里面分成两个部分，包含cover和info，我这里取出info里面的信息
-![pqtp-6](http://cdn.flycode.icu/codeCenterImg/pqtp-6.png)
-![pqtp-7](http://cdn.flycode.icu/codeCenterImg/pqtp-7.png)
+![pqtp-6](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/pqtp-6.png)
+![pqtp-7](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/pqtp-7.png)
 
 标题通过h4.title里面的a标签获取
 作者直接通过p.author获取
@@ -197,7 +197,7 @@ public BaseResponse<String> famousDouBanBook(){
 ## 4. 99健康网
 地址  https://yqk.99.com.cn/yq/type/list-300-9.html
 
-![pqtp-8](http://cdn.flycode.icu/codeCenterImg/pqtp-8.png)
+![pqtp-8](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/pqtp-8.png)
 这个网站有点朴素，列表展示使用的div，导致获取联系电话的时候 需要使用:contains伪类来确保只提取包含"联系电话"文本的元素，而且取出来的数据是以间隔存储的，所以以下方式需要手动将间隔分离成不同的对象存储
 ![pqtp-8](D:/BaiduNetdiskDownload/pachong/pqtp-8.png)
 

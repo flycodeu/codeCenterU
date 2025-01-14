@@ -3,7 +3,7 @@
 >
 > 本站地址：[https://www.flycode.icu](https://www.flycode.icu)
 
-![SQL优化](http://cdn.flycode.icu/codeCenterImg/SQL%E4%BC%98%E5%8C%96.png)
+![SQL优化](https://flycodeu-1314556962.cos.ap-nanjing.myqcloud.com//codeCenterImg/SQL%E4%BC%98%E5%8C%96.png)
 
 
 
