@@ -86,3 +86,5 @@
 [Centos安装Java8](Centos7安装Java8.md)
 
 [前端file-saver保存文件](前端file-saver保存文件)
+
+[获取图片URL格式](获取图片URL格式.md)
