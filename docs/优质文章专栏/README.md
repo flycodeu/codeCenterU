@@ -4,7 +4,7 @@
 >
 > 本站地址：[https://www.flycode.icu](https://www.flycode.icu)
 
-收集一些优秀的文章。
+收集一些优秀的文章、项目。
 
 [美团技术文章](https://tech.meituan.com/2024/02/01/2023-spring-festival-present.html)
 

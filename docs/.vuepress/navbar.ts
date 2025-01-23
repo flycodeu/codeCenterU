@@ -158,6 +158,10 @@ export default [
             {
                 text: "飞云API",
                 link: '/飞云API/'
+            },
+            {
+                text:"项目推荐",
+                link: '/项目推荐/'
             }
         ]
     },
