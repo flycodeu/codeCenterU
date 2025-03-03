@@ -42,7 +42,8 @@ export default [
             "Centos7安装Nginx.md",
             "Centos7安装Redis.md",
             "前端file-saver保存文件.md",
-            "获取图片URL格式.md"
+            "获取图片URL格式.md",
+            "Jenkins实现自动化部署.md"
         ],
     },
 ];

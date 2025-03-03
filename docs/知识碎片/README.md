@@ -88,3 +88,5 @@
 [前端file-saver保存文件](前端file-saver保存文件)
 
 [获取图片URL格式](获取图片URL格式.md)
+
+[Jenkins实现自动化部署](Jenkins实现自动化部署.md)
