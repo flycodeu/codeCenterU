@@ -591,7 +591,7 @@ BACKUP_DIR="/ntdc/back/web/$(date +%Y%m%d%H%M%S)"
 mkdir -p "$BACKUP_DIR"
 cp -rp /ntdc/web/. "$BACKUP_DIR/"
 rm -rf /ntdc/web/* /ntdc/web/.* 2>/dev/null || true
-cp -rp dist/. /ntdc/web/
+cp -rp dist/. /ntdc/web/ 
 ```
 
 有可能在install的时候无法安装，报错。
